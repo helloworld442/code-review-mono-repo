@@ -8,10 +8,16 @@
   border: none;
   resize: none;
   font-size: 1.25rem;
-  color: #333;
   background-color: transparent;
   text-overflow: ellipsis;
-  white-space: pre-wrap;
+}
+
+.for-loop-code {
+  color: purple;
+}
+
+.while-loop-code {
+  color: purple;
 }
 
 .function-code {
@@ -20,6 +26,10 @@
 
 .function-var-code {
   color: mediumturquoise;
+}
+
+.highlight-function {
+  color: blue;
 }
 
 .state-code {
@@ -34,12 +44,16 @@
   color: #333;
 }
 
+.brace-code {
+  color: purple;
+}
+
 .variable-code {
   color: purple;
 }
 
 .var-code {
-  color: #888;
+  color: #333;
 }
 
 .const-code {
@@ -47,7 +61,7 @@
 }
 
 .let-code {
-  color: #888;
+  color: #333;
 }
 
 .number-code {

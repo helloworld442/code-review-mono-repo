@@ -8,11 +8,10 @@ const EditorForm = () => {
 
   useEffect(() => {
     const hightLightCode = code
-      .replace(
-        /\bfunction\b\s*\((.*?)\)/gu,
-        '<span class = "function-code">function</span> <span class="function-var-code">($1)</span>'
-      )
-      .replaceAll("useState", `<span class = "state-code">useState</span>`)
+      .replace(/for/g, '<span class = "for-loop-code">for</span>')
+      .replace(/while/g, '<span class = "while-loop-code">while</span>')
+      .replace(/function/g, '<span class = "function-code">function</span>')
+      .replace(/(\w+\([^)]*\))/gu, '<span class="highlight-function">$1</span>')
       .replace(
         /var\s+([a-zA-Z]+)/g,
         `<span class = "variable-code">var</span> <span class="var-code">$1</span>`
@@ -37,11 +36,25 @@ const EditorForm = () => {
         /let\s+(`.+?`|\[.+?\])/g,
         '<span class = "variable-code">let</span> <span class="const-code">$1</span>'
       )
+      .replace(
+        /var\s+(`.+?`|\{.+?\})/g,
+        '<span class = "variable-code">var</span> <span class="const-code">$1</span>'
+      )
+      .replace(
+        /const\s+(`.+?`|\{.+?\})/g,
+        '<span class = "variable-code">const</span> <span class="const-code">$1</span>'
+      )
+      .replace(
+        /let\s+(`.+?`|\{.+?\})/g,
+        '<span class = "variable-code">let</span> <span class="const-code">$1</span>'
+      )
       .replace(/\d+/g, '<span class="number-code">$&</span>')
       .replaceAll("[", `<span class = "square-brackets-code">[</span>`)
       .replaceAll("]", `<span class = "square-brackets-code">]</span>`)
       .replaceAll("(", `<span class = "parentheses-code">(</span>`)
-      .replaceAll(")", `<span class = "parentheses-code">)</span>`);
+      .replaceAll(")", `<span class = "parentheses-code">)</span>`)
+      .replaceAll("{", `<span class = "brace-code">{</span>`)
+      .replaceAll("}", `<span class = "brace-code">}</span>`);
 
     dispatch({ type: "CHANGE_INPUT", payload: hightLightCode });
   }, [code]);
