@@ -12,7 +12,7 @@ const Header = () => {
         <ul className="header-menu">
           <li className="header-item">글쓰기</li>
           <li className="header-item">회원가입</li>
-          <li className="header-item">로그인</li>
+          <li className="header-item login">로그인</li>
         </ul>
       </nav>
 
