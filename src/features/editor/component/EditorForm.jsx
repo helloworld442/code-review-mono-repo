@@ -8,7 +8,10 @@ const EditorForm = () => {
 
   useEffect(() => {
     const hightLightCode = code
-      .replaceAll("function", `<span class = "function-code">function</span>`)
+      .replace(
+        /\bfunction\b\s*\((.*?)\)/gu,
+        '<span class = "function-code">function</span> <span class="function-var-code">($1)</span>'
+      )
       .replaceAll("useState", `<span class = "state-code">useState</span>`)
       .replace(
         /var\s+([a-zA-Z]+)/g,
@@ -23,8 +26,16 @@ const EditorForm = () => {
         `<span class = "variable-code">let</span> <span class="let-code">$1</span>`
       )
       .replace(
+        /var\s+(`.+?`|\[.+?\])/g,
+        '<span class = "variable-code">var</span> <span class="const-code">$1</span>'
+      )
+      .replace(
         /const\s+(`.+?`|\[.+?\])/g,
         '<span class = "variable-code">const</span> <span class="const-code">$1</span>'
+      )
+      .replace(
+        /let\s+(`.+?`|\[.+?\])/g,
+        '<span class = "variable-code">let</span> <span class="const-code">$1</span>'
       )
       .replace(/\d+/g, '<span class="number-code">$&</span>')
       .replaceAll("[", `<span class = "square-brackets-code">[</span>`)
