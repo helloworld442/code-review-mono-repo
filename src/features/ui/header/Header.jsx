@@ -1,10 +1,24 @@
+import { useEffect, useState } from "react";
 import "./Header.scss";
+import classNames from "classnames";
 
 const Header = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  const onScrollHandler = () => {
+    setScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", onScrollHandler);
+
+    return () => window.removeEventListener("scroll", onScrollHandler);
+  }, []);
+
   return (
     <header className="header">
       {/* 헤더 네비게이션 영역 */}
-      <nav className="header-nav">
+      <nav className={classNames("header-nav", { hide: scrollY > 50 })}>
         {/* 헤더 로고 */}
         <a className="header-link">별무리 스튜디오</a>
 
@@ -17,7 +31,7 @@ const Header = () => {
       </nav>
 
       {/* 헤더 배경화면 영역 */}
-      <div className="header-background">
+      <div className={classNames("header-background", { hide: scrollY > 50 })}>
         {/* 헤더 소개글 영역 */}
         <div className="header-title-area">
           <h2 className="header-intro-main-title">코드리뷰 사이트 별무리</h2>
