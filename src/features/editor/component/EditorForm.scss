@@ -1,0 +1,15 @@
+.editor-form {
+  z-index: 1;
+  position: absolute;
+  width: calc(100% - 1em);
+  height: calc(100% - 1em);
+  padding: 0.5em;
+  margin: 0;
+  border: none;
+  resize: none;
+  font-size: 1.25rem;
+  color: transparent;
+  background-color: transparent;
+  caret-color: #333;
+  white-space: pre-wrap;
+}

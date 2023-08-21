@@ -1,0 +1,51 @@
+.editor-code {
+  z-index: 0;
+  position: absolute;
+  width: calc(100% - 1em);
+  height: calc(100% - 1em);
+  padding: 0.5em;
+  margin: 0;
+  border: none;
+  resize: none;
+  font-size: 1.25rem;
+  color: #333;
+  background-color: transparent;
+  text-overflow: ellipsis;
+  white-space: pre-wrap;
+}
+
+.function-code {
+  color: red;
+}
+
+.state-code {
+  color: blue;
+}
+
+.parentheses-code {
+  color: #888;
+}
+
+.square-brackets-code {
+  color: #333;
+}
+
+.variable-code {
+  color: purple;
+}
+
+.var-code {
+  color: #888;
+}
+
+.const-code {
+  color: red;
+}
+
+.let-code {
+  color: #888;
+}
+
+.number-code {
+  color: orange;
+}
