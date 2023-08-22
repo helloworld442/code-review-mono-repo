@@ -1,6 +1,7 @@
 .header {
   position: relative;
   width: 100%;
+  background-color: #fff;
 }
 
 .header-nav,
@@ -58,7 +59,7 @@
 
 .header-background {
   width: 100%;
-  height: 600px;
+  height: 800px;
   padding: 36px;
   box-sizing: border-box;
   background-color: #403a6b;
@@ -75,21 +76,21 @@
 
 .header-intro-main-title {
   margin-bottom: 36px;
-  font-size: 3.6rem;
+  font-size: 4.6rem;
   font-weight: bold;
   color: #eee;
 }
 
 .header-intro-sub-title {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: bold;
   color: #eee;
 }
 
 .header-plant-icons {
   display: inline-block;
-  width: 350px;
-  height: 350px;
+  width: 450px;
+  height: 450px;
   border: 3px solid #eee;
   border-radius: 100%;
   display: flex;
@@ -100,8 +101,8 @@
 }
 
 #sun {
-  width: 250px;
-  height: 250px;
+  width: 350px;
+  height: 350px;
   border: 5px solid #333;
   border-radius: 100%;
   background: #ffff00;
@@ -109,9 +110,9 @@
 
 #moon {
   position: absolute;
-  top: -20px;
-  width: 24px;
-  height: 24px;
+  top: -36px;
+  width: 50px;
+  height: 50px;
   border: 5px solid #333;
   border-radius: 100%;
   background: #777;
