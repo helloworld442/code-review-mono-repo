@@ -73,10 +73,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  opacity: 0;
+  display: none;
   transition: all 0.8s ease-in-out;
 
   &.isBackground {
+    display: flex;
     opacity: 1;
   }
 
