@@ -25,6 +25,7 @@
   position: absolute;
   top: 24px;
   left: 36px;
+  padding-top: 12px;
   font-size: 1.4rem;
   font-weight: bold;
 }
@@ -101,15 +102,17 @@
 #sun {
   width: 250px;
   height: 250px;
+  border: 5px solid #333;
   border-radius: 100%;
   background: #ffff00;
 }
 
 #moon {
   position: absolute;
-  top: -12px;
+  top: -20px;
   width: 24px;
   height: 24px;
+  border: 5px solid #333;
   border-radius: 100%;
   background: #777;
 }

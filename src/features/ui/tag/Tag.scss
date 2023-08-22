@@ -1,0 +1,43 @@
+.tag {
+  width: 250px;
+  height: 80px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 5px solid #333;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.tag-icon {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border: 5px solid #333;
+  border-radius: 100%;
+
+  &.yellow {
+    background: #ffff00;
+  }
+
+  &.green {
+    background: #3cb371;
+  }
+
+  &.blue {
+    background: #4b89dc;
+  }
+}
+
+.tag-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
