@@ -4,7 +4,7 @@ import { Header, Layout } from "../features/ui";
 const Home = () => {
   return (
     <Layout>
-      <Header />
+      <Header isBackground />
       <ReviewTemplate>
         <ReviewHead />
         <ReviewList />

@@ -15,7 +15,12 @@
   width: 100%;
   padding: 36px;
   box-sizing: border-box;
-  color: #eee;
+  color: #333;
+  z-index: 100;
+
+  &.isBackground {
+    color: #eee;
+  }
 
   &.hide {
     color: #333;
@@ -29,6 +34,7 @@
   padding-top: 12px;
   font-size: 1.4rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .header-menu {
@@ -67,8 +73,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  opacity: 1;
+  opacity: 0;
   transition: all 0.8s ease-in-out;
+
+  &.isBackground {
+    opacity: 1;
+  }
 
   &.hide {
     opacity: 0;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./Header.scss";
 import classNames from "classnames";
 
-const Header = () => {
+const Header = ({ isBackground }) => {
   const [scrollY, setScrollY] = useState(0);
 
   const onScrollHandler = () => {
@@ -18,20 +18,28 @@ const Header = () => {
   return (
     <header className="header">
       {/* 헤더 네비게이션 영역 */}
-      <nav className={classNames("header-nav", { hide: scrollY > 50 })}>
+      <nav className={classNames("header-nav", { hide: scrollY > 50, isBackground })}>
         {/* 헤더 로고 */}
-        <a className="header-link">별무리 스튜디오</a>
+        <a href="/" className="header-link">
+          별무리 스튜디오
+        </a>
 
         {/* 헤더 매뉴 */}
         <ul className="header-menu">
-          <li className="header-item">글쓰기</li>
-          <li className="header-item">회원가입</li>
-          <li className="header-item login">로그인</li>
+          <li className="header-item">
+            <a href="/write">글쓰기</a>
+          </li>
+          <li className="header-item">
+            <a>회원가입</a>
+          </li>
+          <li className="header-item login">
+            <a>로그인</a>
+          </li>
         </ul>
       </nav>
 
       {/* 헤더 배경화면 영역 */}
-      <div className={classNames("header-background", { hide: scrollY > 50 })}>
+      <div className={classNames("header-background", { hide: scrollY > 50, isBackground })}>
         {/* 헤더 소개글 영역 */}
         <div className="header-title-area">
           <h2 className="header-intro-main-title">코드리뷰 사이트 별무리</h2>
