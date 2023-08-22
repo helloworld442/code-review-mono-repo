@@ -5,6 +5,9 @@ const ReviewList = () => {
   return (
     <ul className="review-list">
       <ReviewItem />
+      <ReviewItem />
+      <ReviewItem />
+      <ReviewItem />
     </ul>
   );
 };
