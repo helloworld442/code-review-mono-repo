@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Tag } from "../../ui";
 import "./ReviewItem.scss";
-import { faEye, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { Tag } from "../../ui";
+import { ReactComponent as Eye } from "../../../assets/eye-solid.svg";
+import { ReactComponent as Thumbs } from "../../../assets/thumbs-up-solid.svg";
 
 const ReviewItem = () => {
   return (
@@ -23,8 +23,8 @@ const ReviewItem = () => {
         <span className="item-user-profile"></span>
         <span className="item-user-name">김민승</span>
         <span className="item-user-social">
-          <FontAwesomeIcon className="item-icon" icon={faEye} /> 0
-          <FontAwesomeIcon className="item-icon" icon={faThumbsUp} /> 0
+          <Eye className="item-icon" /> 0
+          <Thumbs className="item-icon" /> 0
         </span>
       </span>
     </li>
