@@ -1,9 +1,6 @@
 .tag {
-  width: 250px;
-  height: 80px;
   padding: 12px;
   box-sizing: border-box;
-  border: 5px solid #333;
   border-radius: 12px;
   display: flex;
   justify-content: space-between;
@@ -14,14 +11,47 @@
   &:hover {
     transform: scale(1.05);
   }
+
+  &.large {
+    width: 250px;
+    height: 80px;
+    border: 5px solid #333;
+  }
+
+  &.medium {
+    width: 150px;
+    height: 50px;
+    border: 3px solid #333;
+  }
+
+  &.small {
+    width: 120px;
+    height: 30px;
+    border: 2px solid #333;
+  }
 }
 
 .tag-icon {
   display: inline-block;
-  width: 36px;
-  height: 36px;
-  border: 5px solid #333;
   border-radius: 100%;
+
+  &.large {
+    border: 5px solid #333;
+    width: 36px;
+    height: 36px;
+  }
+
+  &.medium {
+    border: 3px solid #333;
+    width: 12px;
+    height: 12px;
+  }
+
+  &.small {
+    border: 2px solid #333;
+    width: 10px;
+    height: 10px;
+  }
 
   &.yellow {
     background: #ffff00;
@@ -37,7 +67,18 @@
 }
 
 .tag-title {
-  font-size: 1.8rem;
   font-weight: bold;
   color: #333;
+
+  &.large {
+    font-size: 1.8rem;
+  }
+
+  &.medium {
+    font-size: 1.2rem;
+  }
+
+  &.small {
+    font-size: 0.8rem;
+  }
 }

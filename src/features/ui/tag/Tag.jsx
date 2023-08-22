@@ -1,11 +1,11 @@
 import classNames from "classnames";
 import "./Tag.scss";
 
-const Tag = ({ title, color }) => {
+const Tag = ({ title, color, size }) => {
   return (
-    <span className="tag">
-      <span className={classNames("tag-icon", color)}></span>
-      <span className="tag-title">{title}</span>
+    <span className={classNames("tag", size)}>
+      <span className={classNames("tag-icon", color, size)}></span>
+      <span className={classNames("tag-title", size)}>{title}</span>
     </span>
   );
 };
