@@ -14,6 +14,17 @@
   }
 }
 
+.review-item-icon {
+  position: absolute;
+  top: -18px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 5px solid #333;
+  border-radius: 100%;
+  background: #ffff00;
+}
+
 .review-item-tag {
   width: 100%;
   padding: 12px 0;
@@ -52,15 +63,6 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
-
-.item-user-profile {
-  display: inline-block;
-  width: 36px;
-  height: 36px;
-  border: 5px solid #333;
-  border-radius: 100%;
-  background: #ffff00;
 }
 
 .item-user-name {

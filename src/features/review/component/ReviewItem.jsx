@@ -6,6 +6,9 @@ import { ReactComponent as Thumbs } from "../../../assets/thumbs-up-solid.svg";
 const ReviewItem = () => {
   return (
     <li className="review-item">
+      {/* 리뷰 아이템 아이콘 영역 */}
+      <span className="review-item-icon"></span>
+
       {/* 리뷰 아이템 테그 영역 */}
       <span className="review-item-tag">
         <Tag title="JavaScript" color="yellow" size="small" />
@@ -20,7 +23,6 @@ const ReviewItem = () => {
 
       {/* 리뷰 아이템 정보 영역 */}
       <span className="review-item-info">
-        <span className="item-user-profile"></span>
         <span className="item-user-name">김민승</span>
         <span className="item-user-social">
           <Eye className="item-icon" /> 0
