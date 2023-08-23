@@ -1,6 +1,7 @@
+import "./ReviewForm.scss";
 import { useState } from "react";
 import { ReviewInput, ReviewSelect, ReviewTextArea } from "../../ui";
-import "./ReviewForm.scss";
+import { EditorCode, EditorForm } from "../../editor/component";
 
 const ReviewForm = () => {
   const skillOptions = ["JavaScript", "Node Js", "React Js"];
@@ -21,8 +22,8 @@ const ReviewForm = () => {
 
   const validateContent = (content) => {
     if (content.trim() === "") return "내용을 입력해주세요";
-    if (content.length < 30) return "내용의 길이를 (30~150)자로 맞춰주세요";
-    if (content.length > 150) return "내용의 길이를 (30~150)자로 맞춰주세요";
+    if (content.length < 30) return "내용의 길이를 (30~300)자로 맞춰주세요";
+    if (content.length > 300) return "내용의 길이를 (30~300)자로 맞춰주세요";
     return "";
   };
 
@@ -34,6 +35,12 @@ const ReviewForm = () => {
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
+  };
+
+  const onChangeCode = (target) => {
+    const { name, value } = target;
     setForm((prev) => ({ ...prev, [name]: value }));
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
@@ -55,14 +62,19 @@ const ReviewForm = () => {
     }
   };
 
+  console.log(form);
+
   return (
     <form className="review-form" onSubmit={onSubmitReview}>
       {/* 리뷰에서 정보 입력 영역 (제목 , 글 , 기술 스택) */}
       <div className="review-form-info">
+        {/* 정보 입력 영역 제목 */}
         <h4 className="form-info-title">
           <span className="info-title-num">1</span>
           코드리뷰 기본 정보를 입력해주세요
         </h4>
+
+        {/* 정보 입력 영역 내용 */}
         <ReviewSelect
           name="skill"
           label="기술 스택"
@@ -91,10 +103,20 @@ const ReviewForm = () => {
 
       {/* 리뷰에서 정보 입력 영역 (코드) */}
       <div className="review-form-code">
+        {/* 정보 엽력 영역 제목 */}
         <h4 className="form-code-title">
           <span className="code-title-num">2</span>
           코드리뷰 코드를 입력해주세요
         </h4>
+
+        {/* 정보 입력 영역 라벨 (코드) */}
+        <label className="form-code-label">코드</label>
+
+        {/* 정보 이볅 영역 내용 */}
+        <div className="form-code-content">
+          <EditorForm name="code" onCode={onChangeCode} />
+          <EditorCode code={form.code} />
+        </div>
       </div>
     </form>
   );
