@@ -1,0 +1,69 @@
+.select {
+  width: 300px;
+}
+
+.select-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.select-trigger {
+  width: 100%;
+  height: 60px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 3px solid #333;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .review-select-trigger {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #888;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .review-select-arrow {
+    width: 1.4rem;
+    height: 1.4rem;
+    cursor: pointer;
+  }
+}
+
+.select-menu {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  box-sizing: border-box;
+  border: 3px solid #333;
+  border-radius: 8px;
+}
+
+.select-item {
+  width: 100%;
+  padding: 12px 0;
+  box-sizing: border-box;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+
+  & + & {
+    margin-top: 12px;
+  }
+
+  &:hover {
+    color: #fff;
+    background: skyblue;
+  }
+}
