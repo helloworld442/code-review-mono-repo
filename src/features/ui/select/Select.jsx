@@ -54,7 +54,7 @@ const SelectItem = ({ item }) => {
 };
 
 const SelectError = ({ error }) => {
-  return <spam className="select-error">{error}</spam>;
+  return <span className="select-error">{error}</span>;
 };
 
 Select.Trigger = SelectTrigger;

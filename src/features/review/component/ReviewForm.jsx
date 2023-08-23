@@ -52,7 +52,7 @@ const ReviewForm = () => {
     const titleError = validateTitle(form.title);
     const contentError = validateContent(form.content);
 
-    if (skillError) {
+    if (skillError || titleError || contentError) {
       setErrors({
         skill: skillError,
         title: titleError,
