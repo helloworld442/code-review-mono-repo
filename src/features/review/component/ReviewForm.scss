@@ -103,5 +103,11 @@
 .form-code-content {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 500px;
+}
+
+#review-form-button {
+  position: absolute;
+  bottom: -100px;
+  left: 0;
 }

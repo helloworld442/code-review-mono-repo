@@ -1,6 +1,6 @@
 import "./ReviewForm.scss";
 import { useState } from "react";
-import { ReviewInput, ReviewSelect, ReviewTextArea } from "../../ui";
+import { Button, ReviewInput, ReviewSelect, ReviewTextArea } from "../../ui";
 import { EditorCode, EditorForm } from "../../editor/component";
 
 const ReviewForm = () => {
@@ -114,6 +114,9 @@ const ReviewForm = () => {
         <div className="form-code-content">
           <EditorForm name="code" onCode={onChangeCode} />
           <EditorCode code={form.code} />
+          <Button id="review-form-button" size="large" primary fullWidth type="submit">
+            글 등록
+          </Button>
         </div>
       </div>
     </form>
