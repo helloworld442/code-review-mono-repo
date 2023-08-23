@@ -28,6 +28,7 @@ const EditorForm = ({ name, label, onCode }) => {
       .replace(/(function|while|for)/g, '<span class = "hg-block-code">$1</span>')
       .replace(/(if|else)/g, '<span class = "hg-conditional-code">$1</span>')
       .replace(/(return|break|continue)/g, '<span class = "hg-return-code">$1</span>')
+      .replace(/(null)/g, '<span class = "hg-null-code">$1</span>')
       .replace(/(\w+\([^)]*\))/gu, '<span class = "hg-function-code">$1</span>')
       .replace(/\(([^()<>=]*)\)/g, '<span class = "hg-parenthesis-function-code">($1)</span>')
       .replace(/\[([^\[\]=<>]*)\]/g, '<span class = "hg-bracket-var-code">[$1]</span>')
