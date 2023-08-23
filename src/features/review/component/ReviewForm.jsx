@@ -62,8 +62,6 @@ const ReviewForm = () => {
     }
   };
 
-  console.log(form);
-
   return (
     <form className="review-form" onSubmit={onSubmitReview}>
       {/* 리뷰에서 정보 입력 영역 (제목 , 글 , 기술 스택) */}
