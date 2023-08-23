@@ -59,7 +59,10 @@ const ReviewForm = () => {
     <form className="review-form" onSubmit={onSubmitReview}>
       {/* 리뷰에서 정보 입력 영역 (제목 , 글 , 기술 스택) */}
       <div className="review-form-info">
-        {/* 기술 스택 입력 영역 */}
+        <h4 className="form-info-title">
+          <span className="info-title-num">1</span>
+          코드리뷰 기본 정보를 입력해주세요
+        </h4>
         <ReviewSelect
           name="skill"
           label="기술 스택"
@@ -87,7 +90,12 @@ const ReviewForm = () => {
       </div>
 
       {/* 리뷰에서 정보 입력 영역 (코드) */}
-      <div className="review-form-code"></div>
+      <div className="review-form-code">
+        <h4 className="form-code-title">
+          <span className="code-title-num">2</span>
+          코드리뷰 코드를 입력해주세요
+        </h4>
+      </div>
     </form>
   );
 };
