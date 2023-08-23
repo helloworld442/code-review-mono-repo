@@ -36,6 +36,10 @@
   justify-content: flex-start;
   align-items: center;
   gap: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   .info-title-num {
     width: 36px;
@@ -76,6 +80,10 @@
   justify-content: flex-start;
   align-items: center;
   gap: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   .code-title-num {
     width: 36px;

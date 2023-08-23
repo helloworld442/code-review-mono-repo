@@ -14,7 +14,7 @@ const EditorForm = ({ name, label, onCode }) => {
       let val = e.target.value;
       let start = e.target.selectionStart;
       let end = e.target.selectionEnd;
-      const tabSpaces = "    ";
+      const tabSpaces = "   ";
       e.target.value = val.substring(0, start) + tabSpaces + val.substring(end);
       e.target.selectionStart = e.target.selectionEnd = start + tabSpaces.length;
       setValue(e.target.value);
