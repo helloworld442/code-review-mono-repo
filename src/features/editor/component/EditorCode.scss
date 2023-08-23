@@ -17,13 +17,41 @@
   overflow-y: auto;
 }
 
+// .hg-dot-code {
+//   color: #eee;
+// }
+
+// .hg-not-dot-code {
+//   color: #eee;
+// }
+
 .editor-code-button {
   width: 100%;
   height: 6px;
 }
 
+.hg-word-code {
+  color: #4b89dc;
+}
+
+.hg-word-parenthesis-code {
+  color: #eee;
+}
+
 .hg-block-code {
   color: #a374db;
+}
+
+.hg-function-keyword-code {
+  color: #a374db;
+}
+
+.hg-fc-parenthesis-code {
+  color: #db4455;
+}
+
+.hg-block-parenesis-code {
+  color: #eee;
 }
 
 .hg-return-code {
@@ -34,12 +62,24 @@
   color: #5cffd1;
 }
 
+.hg-gate-parenesis-code {
+  color: #eee;
+}
+
 .hg-function-code {
   color: #4b89dc;
 }
 
+.hg-fc-parenesis-code {
+  color: #eee;
+}
+
 .hg-conditional-code {
   color: #a374db;
+}
+
+.hg-con-parenesis-code {
+  color: #eee;
 }
 
 .hg-parenthesis-function-code {
@@ -72,4 +112,12 @@
 
 .hg-not-equal-code {
   color: #eee;
+}
+
+.hg-arrow-var-code {
+  color: #fff;
+}
+
+.hg-marker-code {
+  color: green;
 }
