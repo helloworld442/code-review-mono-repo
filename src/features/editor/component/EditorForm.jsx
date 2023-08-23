@@ -24,6 +24,7 @@ const EditorForm = ({ name, label, onCode }) => {
   useEffect(() => {
     const hgCode = value
       .replace(/(const|var|let)/g, '<span class = "hg-var-code">$1</span>')
+      .replace(/(import|export|from)/g, '<span class = "hg-gate-code">$1</span>')
       .replace(/(function|while|for)/g, '<span class = "hg-block-code">$1</span>')
       .replace(/(if|else)/g, '<span class = "hg-conditional-code">$1</span>')
       .replace(/(return|break|continue)/g, '<span class = "hg-return-code">$1</span>')
