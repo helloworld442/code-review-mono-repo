@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import "./Select.scss";
 import { createContext, useContext, useState } from "react";
 
@@ -26,11 +27,11 @@ const Select = ({ children, name, label, onSelect }) => {
   );
 };
 
-const SelectTrigger = ({ trigger }) => {
+const SelectTrigger = ({ error, trigger }) => {
   const { onOpenSelect } = useContext(SelectContext);
 
   return (
-    <div className="select-trigger" onClick={onOpenSelect}>
+    <div className={classNames("select-trigger", { error })} onClick={onOpenSelect}>
       {trigger}
     </div>
   );
@@ -52,8 +53,13 @@ const SelectItem = ({ item }) => {
   );
 };
 
+const SelectError = ({ error }) => {
+  return <spam className="select-error">{error}</spam>;
+};
+
 Select.Trigger = SelectTrigger;
 Select.Menu = SelectMenu;
 Select.Item = SelectItem;
+Select.Error = SelectError;
 
 export default Select;

@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Input from "./Input";
 
 const ReviewInput = ({ name, label, value, error, onInput, placeholder }) => {
@@ -6,10 +7,11 @@ const ReviewInput = ({ name, label, value, error, onInput, placeholder }) => {
       <Input.Value
         name={name}
         value={value}
-        error={error}
+        id={classNames({ error })}
         onChange={onInput}
         placeholder={placeholder}
       />
+      <Input.Error error={error} />
     </Input>
   );
 };

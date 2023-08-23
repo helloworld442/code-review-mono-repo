@@ -108,7 +108,9 @@ const ReviewForm = () => {
         </h4>
 
         {/* 정보 입력 영역 라벨 (코드) */}
-        <label className="form-code-label">코드</label>
+        <label className="form-code-label">
+          코드 <span>*</span>
+        </label>
 
         {/* 정보 이볅 영역 내용 */}
         <div className="form-code-content">

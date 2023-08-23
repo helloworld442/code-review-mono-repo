@@ -26,4 +26,16 @@
   &::placeholder {
     color: #888;
   }
+
+  &#error {
+    border: 3px solid red;
+  }
+}
+
+.textarea-error {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: red;
 }

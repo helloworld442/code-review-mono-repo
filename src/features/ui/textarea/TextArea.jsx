@@ -13,6 +13,11 @@ const TextAreaValue = ({ ...rest }) => {
   return <textarea className="textarea-value" {...rest} />;
 };
 
+const TextAreaError = ({ error }) => {
+  return <span className="textarea-error">{error}</span>;
+};
+
 TextArea.Value = TextAreaValue;
+TextArea.Error = TextAreaError;
 
 export default TextArea;

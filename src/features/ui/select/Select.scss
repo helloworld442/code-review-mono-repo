@@ -23,6 +23,10 @@
   justify-content: space-between;
   align-items: center;
 
+  &.error {
+    border: 3px solid red;
+  }
+
   .review-select-trigger {
     font-size: 1.4rem;
     font-weight: bold;
@@ -75,4 +79,12 @@
     color: #fff;
     background: skyblue;
   }
+}
+
+.select-error {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: red;
 }
