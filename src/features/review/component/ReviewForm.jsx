@@ -64,11 +64,31 @@ const ReviewForm = () => {
 
   return (
     <form className="review-form" onSubmit={onSubmitReview}>
+      {/* 리뷰에서 정보 입력 영역 (코드) */}
+      <div className="review-form-code">
+        {/* 정보 엽력 영역 제목 */}
+        <h4 className="form-code-title">
+          <span className="code-title-num">1</span>
+          코드리뷰 코드를 입력해주세요
+        </h4>
+
+        {/* 정보 입력 영역 라벨 (코드) */}
+        <label className="form-code-label">
+          코드 <span>*</span>
+        </label>
+
+        {/* 정보 이볅 영역 내용 */}
+        <div className="form-code-content">
+          <EditorForm name="code" onCode={onChangeCode} />
+          <EditorCode code={form.code} />
+        </div>
+      </div>
+
       {/* 리뷰에서 정보 입력 영역 (제목 , 글 , 기술 스택) */}
       <div className="review-form-info">
         {/* 정보 입력 영역 제목 */}
         <h4 className="form-info-title">
-          <span className="info-title-num">1</span>
+          <span className="info-title-num">2</span>
           코드리뷰 기본 정보를 입력해주세요
         </h4>
 
@@ -97,29 +117,9 @@ const ReviewForm = () => {
           onInput={onChangeInput}
           placeholder="내용을 입력하세요"
         />
-      </div>
-
-      {/* 리뷰에서 정보 입력 영역 (코드) */}
-      <div className="review-form-code">
-        {/* 정보 엽력 영역 제목 */}
-        <h4 className="form-code-title">
-          <span className="code-title-num">2</span>
-          코드리뷰 코드를 입력해주세요
-        </h4>
-
-        {/* 정보 입력 영역 라벨 (코드) */}
-        <label className="form-code-label">
-          코드 <span>*</span>
-        </label>
-
-        {/* 정보 이볅 영역 내용 */}
-        <div className="form-code-content">
-          <EditorForm name="code" onCode={onChangeCode} />
-          <EditorCode code={form.code} />
-          <Button id="review-form-button" size="large" primary fullWidth type="submit">
-            글 등록
-          </Button>
-        </div>
+        <Button id="review-form-code-button" size="large" primary fullWidth type="submit">
+          글 등록
+        </Button>
       </div>
     </form>
   );
