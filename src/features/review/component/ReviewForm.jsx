@@ -1,14 +1,21 @@
 import { useState } from "react";
-import { ReviewSelect } from "../../ui";
+import { ReviewInput, ReviewSelect } from "../../ui";
 import "./ReviewForm.scss";
 
 const ReviewForm = () => {
   const skillOptions = ["JavaScript", "Node Js", "React Js"];
-  const [form, setForm] = useState({ skill: "" });
-  const [errors, setErrors] = useState({ skill: "" });
+  const [form, setForm] = useState({ skill: "", title: "" });
+  const [errors, setErrors] = useState({ skill: "", title: "" });
 
   const validateSkill = (skill) => {
     if (skill.trim() === "") return "기술 스택을 입력해주세요";
+    return "";
+  };
+
+  const validateTitle = (title) => {
+    if (title.trim() === "") return "제목을 입력해주세요";
+    if (title.length < 15) return "제목의 길이를 (15~30)자로 맞춰주세요";
+    if (title.length > 30) return "제목의 길이를 (15~30)자로 맞춰주세요";
     return "";
   };
 
@@ -18,13 +25,20 @@ const ReviewForm = () => {
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
+  const onChangeInput = (e) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
+  };
+
   const onSubmitReview = (e) => {
     e.preventDefault();
 
     const skillError = validateSkill(form.skill);
+    const titleError = validateTitle(form.title);
 
     if (skillError) {
-      setErrors({ skill: skillError });
+      setErrors({ skill: skillError, title: titleError });
       return;
     }
   };
@@ -41,6 +55,14 @@ const ReviewForm = () => {
           error={errors.skill}
           options={skillOptions}
           onSelect={onChangeSelect}
+        />
+        <ReviewInput
+          name="title"
+          label="제목"
+          value={form.title}
+          error={errors.title}
+          onInput={onChangeInput}
+          placeholder="제목을 입력하세요"
         />
       </div>
 
