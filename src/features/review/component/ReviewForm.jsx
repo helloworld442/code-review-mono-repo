@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ReviewInput, ReviewSelect } from "../../ui";
+import { ReviewInput, ReviewSelect, ReviewTextArea } from "../../ui";
 import "./ReviewForm.scss";
 
 const ReviewForm = () => {
@@ -64,6 +64,7 @@ const ReviewForm = () => {
           onInput={onChangeInput}
           placeholder="제목을 입력하세요"
         />
+        <ReviewTextArea name="content" label="내용" placeholder="내용을 입력하세요" />
       </div>
 
       {/* 리뷰에서 정보 입력 영역 (코드) */}
