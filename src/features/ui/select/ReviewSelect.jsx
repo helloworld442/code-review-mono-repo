@@ -1,10 +1,11 @@
 import Select from "./Select";
 import { ReactComponent as ArrowDown } from "../../../assets/arrow-down-solid.svg";
+import classNames from "classnames";
 
-const ReviewSelect = ({ label, options }) => {
+const ReviewSelect = ({ name, label, value, error, options, onSelect }) => {
   return (
-    <Select label={label}>
-      <Select.Trigger trigger={<ReviewSelectTrigger />} />
+    <Select name={name} label={label} onSelect={onSelect}>
+      <Select.Trigger trigger={<ReviewSelectTrigger value={value} />} />
       <Select.Menu>
         {options.map((option, i) => (
           <Select.Item key={i} item={option} />
@@ -14,10 +15,12 @@ const ReviewSelect = ({ label, options }) => {
   );
 };
 
-const ReviewSelectTrigger = () => {
+const ReviewSelectTrigger = ({ value }) => {
   return (
     <>
-      <span className="review-select-trigger">기술 스택을 선택하세요</span>
+      <span className={classNames("review-select-trigger", { active: value })}>
+        {value ? value : "기술 스택을 선택하세요"}
+      </span>
       <ArrowDown className="review-select-arrow" />
     </>
   );

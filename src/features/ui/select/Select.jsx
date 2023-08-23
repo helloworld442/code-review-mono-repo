@@ -3,12 +3,18 @@ import { createContext, useContext, useState } from "react";
 
 const SelectContext = createContext(null);
 
-const Select = ({ children, label }) => {
+const Select = ({ children, name, label, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const onOpenSelect = () => setIsOpen(true);
+  const onOpenSelect = () => {
+    setIsOpen(true);
+    onSelect({ name, value: "" });
+  };
 
-  const onCloseSelect = () => setIsOpen(false);
+  const onCloseSelect = (skill) => {
+    setIsOpen(false);
+    onSelect({ name, value: skill });
+  };
 
   return (
     <SelectContext.Provider value={{ isOpen, onOpenSelect, onCloseSelect }}>
@@ -40,7 +46,7 @@ const SelectItem = ({ item }) => {
   const { onCloseSelect } = useContext(SelectContext);
 
   return (
-    <li className="select-item" onClick={onCloseSelect}>
+    <li className="select-item" onClick={() => onCloseSelect(item)}>
       {item}
     </li>
   );
