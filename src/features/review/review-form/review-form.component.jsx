@@ -2,11 +2,23 @@ import "./review-form.style.scss";
 import { useState } from "react";
 import { Button, ReviewInput, ReviewSelect, ReviewTextArea } from "../../ui";
 import { EditorCode, EditorForm } from "../../editor";
+import { useMutation, useQueryClient } from "react-query";
+import { postReviews } from "./review-form.api";
+import { useNavigate } from "react-router-dom";
 
 const ReviewForm = () => {
   const skillOptions = ["JavaScript", "Node Js", "React Js"];
+  const navigateTo = useNavigate();
   const [form, setForm] = useState({ skill: "", title: "", content: "", code: "" });
   const [errors, setErrors] = useState({ skill: "", title: "", content: "" });
+  const queryClient = useQueryClient();
+  const reviewMutation = useMutation(postReviews, {
+    onSuccess: () => {
+      queryClient.invalidateQueries("reviews");
+      navigateTo("/");
+    },
+    onError: (error) => console.log(error),
+  });
 
   const validateSkill = (skill) => {
     if (skill.trim() === "") return "기술 스택을 입력해주세요";
@@ -60,7 +72,15 @@ const ReviewForm = () => {
       });
       return;
     }
+
+    reviewMutation.mutate(form);
+
+    setForm({ skill: "", title: "", content: "", code: "" });
   };
+
+  if (reviewMutation.isLoading) return <div>loading...</div>;
+
+  if (reviewMutation.isError) return <div>error...</div>;
 
   return (
     <form className="review-form" onSubmit={onSubmitReview}>
