@@ -49,6 +49,7 @@ const EditorForm = ({ name, onCode }) => {
       .replace(/(break|continue)/g, '<span class = "hg-block-return-code">$1</span>')
       .replace(/(return)/g, '<span class = "hg-return-code">$1</span>')
       .replace(/(null|undefined|false|true)/g, '<span class = "hg-null-code">$1</span>')
+      .replace(/(className)/g, '<span class = "hg-classnames-code">$1</span>')
       .replace(/(\d)/g, '<span class = "hg-num-code">$1</span>')
       .replace(/\/\/.*/g, '<span class = "hg-comment-code">$&</span>')
       .replace(/\[([^\[\]=<>]*)\]/g, '<span class = "hg-bracket-var-code">[$1]</span>')
