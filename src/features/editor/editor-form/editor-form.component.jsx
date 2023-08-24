@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./EditorForm.scss";
+import "./editor-form.style.scss";
 
 const EditorForm = ({ name, onCode }) => {
   const [value, setValue] = useState("");

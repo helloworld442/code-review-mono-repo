@@ -1,4 +1,4 @@
-import "./ReviewItem.scss";
+import "./review-item.style.scss";
 import { Tag } from "../../ui";
 import { ReactComponent as Eye } from "../../../assets/eye-solid.svg";
 import { ReactComponent as Thumbs } from "../../../assets/thumbs-up-solid.svg";

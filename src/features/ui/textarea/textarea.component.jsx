@@ -1,4 +1,4 @@
-import "./TextArea.scss";
+import "./textarea.style.scss";
 
 const TextArea = ({ children, label }) => {
   return (

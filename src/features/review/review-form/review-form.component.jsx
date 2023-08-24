@@ -1,7 +1,7 @@
-import "./ReviewForm.scss";
+import "./review-form.style.scss";
 import { useState } from "react";
 import { Button, ReviewInput, ReviewSelect, ReviewTextArea } from "../../ui";
-import { EditorCode, EditorForm } from "../../editor/component";
+import { EditorCode, EditorForm } from "../../editor";
 
 const ReviewForm = () => {
   const skillOptions = ["JavaScript", "Node Js", "React Js"];

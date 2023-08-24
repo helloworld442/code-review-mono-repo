@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./Header.scss";
+import "./header.style.scss";
 import classNames from "classnames";
 
 const Header = ({ isBackground }) => {

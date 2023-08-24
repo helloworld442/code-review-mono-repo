@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import TextArea from "./TextArea";
+import TextArea from "./textarea.component";
 
 const ReviewTextArea = ({ name, label, value, error, onInput, placeholder }) => {
   return (

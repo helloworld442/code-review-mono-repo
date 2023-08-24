@@ -1,4 +1,4 @@
-import { ReviewHead, ReviewList, ReviewTemplate } from "../features/review/component";
+import { ReviewHead, ReviewList, ReviewTemplate } from "../features/review";
 import { Header, Layout } from "../features/ui";
 
 const Home = () => {

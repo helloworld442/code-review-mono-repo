@@ -1,4 +1,4 @@
-import "./ReviewHead.scss";
+import "./review-head.style.scss";
 import { Tag } from "../../ui";
 
 const ReviewHead = () => {

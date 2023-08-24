@@ -1,5 +1,5 @@
-import "./ReviewList.scss";
-import ReviewItem from "./ReviewItem";
+import "./review-list.style.scss";
+import ReviewItem from "./review-item.component";
 
 const ReviewList = () => {
   return (

@@ -1,4 +1,4 @@
-import "./Input.scss";
+import "./input.style.scss";
 
 const Input = ({ children, label }) => {
   return (

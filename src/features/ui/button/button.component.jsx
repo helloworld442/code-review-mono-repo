@@ -1,4 +1,4 @@
-import "./Button.scss";
+import "./button.style.scss";
 import classNames from "classnames";
 
 const Button = ({ children, size, fullWidth, primary, ...rest }) => {

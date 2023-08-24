@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import "./Select.scss";
+import "./select.style.scss";
 import { createContext, useContext, useState } from "react";
 
 const SelectContext = createContext(null);

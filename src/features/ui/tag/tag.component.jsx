@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import "./Tag.scss";
+import "./tag.style.scss";
 
 const Tag = ({ title, color, size }) => {
   return (

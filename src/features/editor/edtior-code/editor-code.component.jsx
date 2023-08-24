@@ -1,5 +1,5 @@
 import React from "react";
-import "./EditorCode.scss";
+import "./editor-code.style.scss";
 
 const EditorCode = ({ code }) => {
   return (
