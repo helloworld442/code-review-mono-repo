@@ -3,7 +3,7 @@ import { Tag } from "../../ui";
 import { ReactComponent as Eye } from "../../../assets/eye-solid.svg";
 import { ReactComponent as Thumbs } from "../../../assets/thumbs-up-solid.svg";
 
-const ReviewItem = () => {
+const ReviewItem = ({ review }) => {
   return (
     <li className="review-item">
       {/* 리뷰 아이템 아이콘 영역 */}
@@ -11,14 +11,15 @@ const ReviewItem = () => {
 
       {/* 리뷰 아이템 테그 영역 */}
       <span className="review-item-tag">
-        <Tag title="JavaScript" color="yellow" size="small" />
-        <Tag title="ReactJs" color="blue" size="small" />
+        {review.skill === "javascript" && <Tag title="JavaScript" color="yellow" size="small" />}
+        {review.skill === "NodeJs" && <Tag title="NodeJs" color="green" size="small" />}
+        {review.skill === "ReactJs" && <Tag title="ReactJs" color="blue" size="small" />}
       </span>
 
       {/* 리뷰 아이템 대제목 , 소제목 영역 */}
       <span className="review-item-title">
-        <h2>리엑트 코드 리뷰입니다.</h2>
-        <h4>많은 참여 부탁드릴게용!</h4>
+        <h2>{review.title}</h2>
+        <h4>{review.content}</h4>
       </span>
 
       {/* 리뷰 아이템 정보 영역 */}
