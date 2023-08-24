@@ -4,11 +4,9 @@ import "./EditorForm.scss";
 const EditorForm = ({ name, onCode }) => {
   const [value, setValue] = useState("");
   const textareaRef = useRef(null);
-  const textAreaValue = value.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 
   const onChangeValue = (e) => {
-    const newValue = e.target.value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    setValue(newValue);
+    setValue(e.target.value);
   };
 
   const onKeyDownValue = (e) => {
@@ -26,6 +24,8 @@ const EditorForm = ({ name, onCode }) => {
 
   useEffect(() => {
     const hgCode = value
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
       .replace(/(['"])(.*?)\1/g, '<span class = "hg-marker-code">$1$2$1</span>')
       .replace(
         /function\s+(\w+)\(([^)]+)\)/g,
@@ -74,7 +74,7 @@ const EditorForm = ({ name, onCode }) => {
     <textarea
       ref={textareaRef}
       className="editor-form"
-      value={textAreaValue}
+      value={value}
       onChange={onChangeValue}
       onKeyDown={onKeyDownValue}
       autoComplete="false"
