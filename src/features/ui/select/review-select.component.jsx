@@ -1,4 +1,4 @@
-import Select from "./Select";
+import Select from "./select.component";
 import { ReactComponent as ArrowDown } from "../../../assets/arrow-down-solid.svg";
 import classNames from "classnames";
 
