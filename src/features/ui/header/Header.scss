@@ -13,7 +13,7 @@
 
 .header-nav {
   width: 100%;
-  padding: 36px;
+  height: 80px;
   box-sizing: border-box;
   color: #333;
   background: transparent;
@@ -30,21 +30,22 @@
 
 .header-link {
   position: absolute;
-  top: 24px;
+  top: 50%;
   left: 36px;
-  padding-top: 12px;
   font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
+  transform: translateY(-50%);
 }
 
 .header-menu {
   position: absolute;
-  top: 24px;
+  top: 50%;
   right: 36px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transform: translateY(-50%);
 }
 
 .header-item {
