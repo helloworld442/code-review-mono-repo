@@ -4,6 +4,7 @@ import "./EditorForm.scss";
 const EditorForm = ({ name, onCode }) => {
   const [value, setValue] = useState("");
   const textareaRef = useRef(null);
+  const textAreaValue = value.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 
   const onChangeValue = (e) => {
     const newValue = e.target.value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -73,7 +74,7 @@ const EditorForm = ({ name, onCode }) => {
     <textarea
       ref={textareaRef}
       className="editor-form"
-      value={value}
+      value={textAreaValue}
       onChange={onChangeValue}
       onKeyDown={onKeyDownValue}
       autoComplete="false"

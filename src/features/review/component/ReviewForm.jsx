@@ -5,7 +5,7 @@ import { EditorCode, EditorForm } from "../../editor/component";
 
 const ReviewForm = () => {
   const skillOptions = ["JavaScript", "Node Js", "React Js"];
-  const [form, setForm] = useState({ skill: "", title: "", content: "" });
+  const [form, setForm] = useState({ skill: "", title: "", content: "", code: "" });
   const [errors, setErrors] = useState({ skill: "", title: "", content: "" });
 
   const validateSkill = (skill) => {
