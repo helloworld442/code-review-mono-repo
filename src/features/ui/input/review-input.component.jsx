@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import Input from "./Input";
+import Input from "./input.component";
 
 const ReviewInput = ({ name, label, value, error, onInput, placeholder }) => {
   return (
