@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React from "react";
 import "./EditorCode.scss";
 
 const EditorCode = ({ code }) => {

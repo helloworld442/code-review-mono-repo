@@ -6,7 +6,8 @@ const EditorForm = ({ name, onCode }) => {
   const textareaRef = useRef(null);
 
   const onChangeValue = (e) => {
-    setValue(e.target.value);
+    const newValue = e.target.value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    setValue(newValue);
   };
 
   const onKeyDownValue = (e) => {
@@ -41,16 +42,23 @@ const EditorForm = ({ name, onCode }) => {
         /(\w+)(\([^)]*\))/g,
         '<span class = "hg-word-code">$1<span class = "hg-word-parenthesis-code">$2</span></span>'
       )
-      .replace(/(import|export|from)/g, '<span class = "hg-gate-code">$1</span>')
+      .replace(/(import|export|from|default)/g, '<span class = "hg-gate-code">$1</span>')
       .replace(/(function)/g, '<span class = "hg-function-keyword-code">$1</span>')
       .replace(/(const|var|let)/g, '<span class = "hg-var-code">$1</span>')
-      .replace(/(return|break|continue)/g, '<span class = "hg-return-code">$1</span>')
+      .replace(/(break|continue)/g, '<span class = "hg-block-return-code">$1</span>')
+      .replace(/(return)/g, '<span class = "hg-return-code">$1</span>')
       .replace(/(null|false|true)/g, '<span class = "hg-null-code">$1</span>')
       .replace(/(\d)/g, '<span class = "hg-num-code">$1</span>')
       .replace(/\/\/.*/g, '<span class = "hg-comment-code">$&</span>')
       .replace(/\[([^\[\]=<>]*)\]/g, '<span class = "hg-bracket-var-code">[$1]</span>')
       .replace(/(\(|\))/g, '<span class = "hg-parenthesis-code">$1</span>')
-      .replace(/(\[|\])/g, '<span class = "hg-brackets-code">$1</span>');
+      .replace(/(\{|\})/g, '<span class = "hg-brace-code">$1</span>')
+      .replace(/(\[|\])/g, '<span class = "hg-brackets-code">$1</span>')
+      .replace(/&lt;([A-Z][^&<>]*)/g, '<span class = "hg-component-code">&lt;$1</span>')
+      .replace(/&lt;\/([A-Z][^&<>]*)/g, '<span class = "hg-component-code">&lt;/$1</span>')
+      .replace(/&lt;([a-z][^&<>]*)/g, '<span class = "hg-element-code">&lt;$1</span>')
+      .replace(/&lt;\/([a-z][^&<>]*)/g, '<span class = "hg-element-code">&lt;/$1</span>')
+      .replace(/&lt;|&gt;/g, '<span class="hg-hyper-code">$&</span>');
 
     onCode({ name, value: hgCode });
   }, [value]);

@@ -7,7 +7,7 @@
   border: none;
   outline: none;
   background: #333;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
   font-family: monospace;
   color: #eee;
@@ -15,6 +15,7 @@
   z-index: 0;
   white-space: pre-wrap;
   overflow-y: auto;
+  line-height: 1.5rem;
 }
 
 .hg-word-code {
@@ -111,4 +112,24 @@
 
 .hg-marker-code {
   color: green;
+}
+
+.hg-component-code {
+  color: #ffff00;
+}
+
+.hg-block-return-code {
+  color: #a374db;
+}
+
+.hg-element-code {
+  color: red;
+}
+
+.hg-hyper-code {
+  color: #eee;
+}
+
+.hg-brace-code {
+  color: #eee;
 }
