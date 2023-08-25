@@ -1,3 +1,5 @@
+@import "../../../utils/mixin";
+
 .header {
   position: relative;
   width: 100%;
@@ -69,81 +71,164 @@
   }
 }
 
-.header-background {
-  width: 100%;
-  height: 550px;
-  padding: 0 100px;
-  box-sizing: border-box;
-  background-color: #403a6b;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  display: none;
-  transition: all 0.8s ease-in-out;
-  z-index: 100;
-
-  &.isBackground {
+@include desktop {
+  .header-background {
+    width: 100%;
+    height: 550px;
+    padding: 0 100px;
+    box-sizing: border-box;
+    background-color: #403a6b;
     display: flex;
-    opacity: 1;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+    transition: all 0.8s ease-in-out;
+    z-index: 100;
+
+    &.isBackground {
+      display: flex;
+      opacity: 1;
+    }
+
+    &.hide {
+      opacity: 0;
+    }
   }
 
-  &.hide {
-    opacity: 0;
+  .header-intro-main-title {
+    margin-bottom: 36px;
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: #eee;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .header-intro-sub-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #eee;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .header-plant-icons {
+    display: inline-block;
+    width: 350px;
+    height: 350px;
+    border: 3px solid #eee;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: 50% 50%;
+    animation: rotate_image 6s linear infinite;
+  }
+
+  #sun {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    background: #ffff00;
+  }
+
+  #moon {
+    position: absolute;
+    top: -18px;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background: #777;
+  }
+
+  @keyframes rotate_image {
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }
 
-.header-intro-main-title {
-  margin-bottom: 36px;
-  font-size: 3.2rem;
-  font-weight: bold;
-  color: #eee;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+@include tablet {
+  .header-background {
+    width: 100%;
+    height: 450px;
+    padding: 0 100px;
+    box-sizing: border-box;
+    background-color: #403a6b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+    transition: all 0.8s ease-in-out;
+    z-index: 100;
 
-.header-intro-sub-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #eee;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+    &.isBackground {
+      display: flex;
+      opacity: 1;
+    }
 
-.header-plant-icons {
-  display: inline-block;
-  width: 350px;
-  height: 350px;
-  border: 3px solid #eee;
-  border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform-origin: 50% 50%;
-  animation: rotate_image 6s linear infinite;
-}
+    &.hide {
+      opacity: 0;
+    }
+  }
 
-#sun {
-  width: 250px;
-  height: 250px;
-  border-radius: 100%;
-  background: #ffff00;
-}
+  .header-intro-main-title {
+    margin-bottom: 36px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #eee;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-#moon {
-  position: absolute;
-  top: -18px;
-  width: 36px;
-  height: 36px;
-  border-radius: 100%;
-  background: #777;
-}
+  .header-intro-sub-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #eee;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
-@keyframes rotate_image {
-  100% {
-    transform: rotate(360deg);
+  .header-plant-icons {
+    display: inline-block;
+    width: 220px;
+    height: 220px;
+    border: 3px solid #eee;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: 50% 50%;
+    animation: rotate_image 6s linear infinite;
+  }
+
+  #sun {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    background: #ffff00;
+  }
+
+  #moon {
+    position: absolute;
+    top: -18px;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background: #777;
+  }
+
+  @keyframes rotate_image {
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }

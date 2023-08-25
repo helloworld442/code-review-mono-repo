@@ -1,11 +1,27 @@
-.review-head {
-  max-width: 900px;
-  padding: 12px 0;
-  margin: 0 auto;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+@import "../../../utils/mixin";
+
+@include desktop {
+  .review-head {
+    max-width: 900px;
+    padding: 12px 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+@include tablet {
+  .review-head {
+    max-width: 768px;
+    padding: 12px 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
 .review-head-title {
