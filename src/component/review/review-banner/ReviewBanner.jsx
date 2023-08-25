@@ -21,10 +21,12 @@ const ReviewBanner = () => {
       <ul className="review-banner-list">
         {data.slice(0, 3).map((item) => (
           <li className="review-banner-item">
-            <div className="banner-item-title">
-              <span className="banner-item-id">답변진행 중</span>
-              <h2>{item.title}</h2>
-            </div>
+            <a href={"/detail/" + item.id}>
+              <div className="banner-item-title">
+                <span className="banner-item-id">답변진행 중</span>
+                <h2>{item.title}</h2>
+              </div>
+            </a>
 
             <div className="banner-item-tags">
               {item.tags.map((tag) => (

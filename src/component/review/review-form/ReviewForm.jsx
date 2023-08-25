@@ -42,12 +42,13 @@ const ReviewForm = () => {
   const onKeyDownTag = (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
-      setForm((prev) => ({ ...prev, tags: form.tags.concat(e.target.value), tag: "" }));
+      if (e.target.value.trim() !== "") {
+        setForm((prev) => ({ ...prev, tags: form.tags.concat(e.target.value), tag: "" }));
+      }
     }
   };
 
   const onDeleteTag = (id) => {
-    console.log(id);
     setForm((prev) => ({ ...prev, tags: form.tags.filter((_, i) => i !== id) }));
   };
 

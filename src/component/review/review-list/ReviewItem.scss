@@ -43,6 +43,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
+    &:hover {
+      color: rgb(64, 58, 107, 0.5);
+    }
   }
 }
 

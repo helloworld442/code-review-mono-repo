@@ -55,6 +55,10 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    &:hover {
+      color: rgb(64, 58, 107, 0.5);
+    }
   }
 }
 
