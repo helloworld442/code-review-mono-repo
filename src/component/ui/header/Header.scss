@@ -18,12 +18,15 @@
   color: #333;
   background: transparent;
   z-index: 100;
+  transform: all 0.8s ease-in-out;
 
   &.isBackground {
+    background: #403a6b;
     color: #eee;
   }
 
   &.hide {
+    background: #fff;
     color: #333;
   }
 }
