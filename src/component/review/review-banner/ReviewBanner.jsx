@@ -4,7 +4,7 @@ import "./ReviewBanner.scss";
 import { getReviews } from "../../../api/review";
 
 const ReviewBanner = () => {
-  const { isLoading, isError, data, error } = useQuery("review", getReviews, {
+  const { isLoading, isError, data, error } = useQuery("reviews", getReviews, {
     retry: 3,
     staleTime: 5 * 1000,
     cacheTime: 60 * 1000,
