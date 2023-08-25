@@ -1,10 +1,10 @@
 import "./ReviewForm.scss";
 import { useState } from "react";
-import { Button, ReviewInput, ReviewSelect, ReviewTextArea } from "../ui";
-import { EditorCode, EditorForm } from "../editor";
+import { Button, ReviewInput, ReviewSelect, ReviewTextArea } from "../../ui";
+import { EditorCode, EditorForm, EditorTemplate } from "../../editor";
 import { useMutation, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
-import { postReviews } from "../../api/review";
+import { postReviews } from "../../../api/review";
 
 const ReviewForm = () => {
   const skillOptions = ["JavaScript", "Node Js", "React Js"];
@@ -98,10 +98,10 @@ const ReviewForm = () => {
         </label>
 
         {/* 정보 이볅 영역 내용 */}
-        <div className="form-code-content">
+        <EditorTemplate>
           <EditorForm name="code" onCode={onChangeCode} />
           <EditorCode code={form.code} />
-        </div>
+        </EditorTemplate>
       </div>
 
       {/* 리뷰에서 정보 입력 영역 (제목 , 글 , 기술 스택) */}

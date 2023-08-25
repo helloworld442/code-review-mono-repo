@@ -1,5 +1,5 @@
 import "./ReviewHead.scss";
-import { Tag } from "../ui";
+import { Tag } from "../../ui";
 
 const ReviewHead = () => {
   return (

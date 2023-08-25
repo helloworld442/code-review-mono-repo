@@ -1,7 +1,7 @@
 import "./ReviewList.scss";
 import ReviewItem from "./ReviewItem";
 import { useQuery } from "react-query";
-import { getReviews } from "../../api/review";
+import { getReviews } from "../../../api/review";
 
 const ReviewList = () => {
   const { isLoading, isError, data, error } = useQuery("/reviews", getReviews, {

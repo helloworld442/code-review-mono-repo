@@ -1,7 +1,7 @@
 import "./ReviewItem.scss";
-import { Tag } from "../ui";
-import { ReactComponent as Eye } from "../../assets/eye-regular.svg";
-import { ReactComponent as Thumbs } from "../../assets/thumbs-up-regular.svg";
+import { Tag } from "../../ui";
+import { ReactComponent as Eye } from "../../../assets/eye-regular.svg";
+import { ReactComponent as Thumbs } from "../../../assets/thumbs-up-regular.svg";
 
 const ReviewItem = ({ review }) => {
   return (
