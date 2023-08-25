@@ -20,7 +20,7 @@ const ReviewBanner = () => {
 
       <ul className="review-banner-list">
         {data.slice(0, 3).map((item) => (
-          <li className="review-banner-item">
+          <li className="review-banner-item" key={item.id}>
             <a href={"/detail/" + item.id}>
               <div className="banner-item-title">
                 <span className="banner-item-id">답변진행 중</span>
@@ -29,8 +29,8 @@ const ReviewBanner = () => {
             </a>
 
             <div className="banner-item-tags">
-              {item.tags.map((tag) => (
-                <Tag title={tag} />
+              {item.tags.map((tag, i) => (
+                <Tag title={tag} key={i} />
               ))}
             </div>
 
