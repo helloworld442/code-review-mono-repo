@@ -1,9 +1,13 @@
 .review-list {
-  width: 100%;
-  min-height: 500px;
-  padding: 36px;
+  max-width: 1000px;
+  height: 600px;
+  padding: 24px;
+  margin: 0 auto;
   box-sizing: border-box;
+  border: 2px solid #eee;
+  border-radius: 4px;
+  background: #fff;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 36px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }

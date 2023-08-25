@@ -1,11 +1,11 @@
 .review-item {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 120px;
   padding: 12px;
   box-sizing: border-box;
-  border: 5px solid #333;
-  border-radius: 12px;
+  border: 2px solid #eee;
+  border-radius: 4px;
   transition: all 0.5s ease-in-out;
   cursor: pointer;
 
@@ -14,85 +14,49 @@
   }
 }
 
-.review-item-icon {
-  position: absolute;
-  top: -18px;
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  border: 5px solid #333;
-  border-radius: 100%;
-  background: #ffff00;
-}
-
-.review-item-tag {
+.review-item-title {
   width: 100%;
   padding: 12px 0;
-  box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 12px;
-}
 
-.review-item-title {
-  display: inline-block;
-  width: 250px;
-  height: 150px;
-  padding: 12px 0;
-  margin: 12px 0;
+  .review-item-id {
+    width: 30px;
+    height: 30px;
+    margin-right: 12px;
+    border: 3px solid #eee;
+    border-radius: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #eee;
+    background: #403a6b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   h2 {
-    margin-bottom: 18px;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #333;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-
-  h4 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #888;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
 }
 
-.review-item-info {
-  position: relative;
-  width: 100%;
-  height: 50px;
-  padding: 12px 0;
+.review-item-comment {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-}
-
-.item-user-name {
-  margin-left: 12px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #333;
-}
-
-.item-user-social {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
+  align-items: flex-end;
+  font-size: 0.925rem;
+  font-weight: 400;
   color: #888;
-  font-size: 1.25rem;
-}
-
-.item-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  fill: #888;
-
-  & + & {
-    margin-left: 12px;
+  svg {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 12px;
+    fill: #888;
   }
 }

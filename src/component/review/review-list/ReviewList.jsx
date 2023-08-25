@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import { getReviews } from "../../../api/review";
 
 const ReviewList = () => {
-  const { isLoading, isError, data, error } = useQuery("/reviews", getReviews, {
+  const { isLoading, isError, data, error } = useQuery("reviews", getReviews, {
     retry: 3,
     staleTime: 5 * 1000,
     cacheTime: 60 * 1000,

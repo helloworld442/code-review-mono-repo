@@ -10,4 +10,9 @@ const getReviews = async () => {
   return response.data;
 };
 
-export { postReviews, getReviews };
+const getReviewById = async (req) => {
+  const response = await api.get("/reviews/" + req);
+  return response.data;
+};
+
+export { postReviews, getReviews, getReviewById };
