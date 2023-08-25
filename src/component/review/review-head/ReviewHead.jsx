@@ -20,7 +20,13 @@ const ReviewHead = () => {
         className={classNames("review-head-title", { active: active === 1 })}
         onClick={() => onClickHeadTitle(1)}
       >
-        {active === 1 && <Check id="check-icon" />} 답변순
+        {active === 1 && <Check id="check-icon" />} 조회순
+      </h2>
+      <h2
+        className={classNames("review-head-title", { active: active === 2 })}
+        onClick={() => onClickHeadTitle(2)}
+      >
+        {active === 2 && <Check id="check-icon" />} 추천순
       </h2>
     </div>
   );
