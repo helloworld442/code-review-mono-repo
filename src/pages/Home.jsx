@@ -1,4 +1,4 @@
-import { ReviewHead, ReviewList, ReviewTemplate } from "../component/review";
+import { ReviewHead, ReviewList, ReviewTag, ReviewTemplate } from "../component/review";
 import { Header, Layout } from "../component/ui";
 
 const Home = () => {
@@ -6,6 +6,7 @@ const Home = () => {
     <Layout>
       <Header isBackground />
       <ReviewTemplate>
+        <ReviewTag />
         <ReviewHead />
         <ReviewList />
       </ReviewTemplate>

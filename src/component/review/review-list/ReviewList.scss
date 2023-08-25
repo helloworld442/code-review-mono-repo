@@ -1,5 +1,5 @@
 .review-list {
-  max-width: 1000px;
+  max-width: 900px;
   height: 600px;
   padding: 24px;
   margin: 0 auto;
@@ -11,5 +11,6 @@
   background: #fff;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-auto-rows: 120px;
+  grid-gap: 20px;
 }

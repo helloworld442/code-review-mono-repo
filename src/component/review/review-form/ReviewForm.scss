@@ -26,6 +26,9 @@
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
 }
 
 .form-info-title {
@@ -56,6 +59,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+
+.form-tag-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.form-tag-item {
+  display: flex;
+  align-items: center;
+
+  .tag-delete {
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }
 
@@ -117,7 +137,7 @@
 
 #review-form-code-button {
   position: absolute;
-  bottom: -65%;
+  bottom: -105%;
   left: 0;
   padding: 0 36px;
   box-sizing: border-box;

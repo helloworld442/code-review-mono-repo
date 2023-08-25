@@ -1,6 +1,7 @@
 import "./ReviewItem.scss";
 import { ReactComponent as ArrowRight } from "../../../assets/arrow-right-solid.svg";
 import { Link } from "react-router-dom";
+import { Tag } from "../../ui";
 
 const ReviewItem = ({ review }) => {
   return (
@@ -17,6 +18,12 @@ const ReviewItem = ({ review }) => {
       <div className="review-item-comment">
         <ArrowRight />
         <h3>이렇게 해보시는 거는 어떨까요?</h3>
+      </div>
+
+      <div className="review-item-tags">
+        {review.tags.map((tag, i) => (
+          <Tag key={i} title={tag} />
+        ))}
       </div>
     </li>
   );

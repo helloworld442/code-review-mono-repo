@@ -1,6 +1,5 @@
 .input {
   width: 100%;
-  margin-bottom: 36px;
 }
 
 .input-label {
@@ -9,6 +8,10 @@
   font-size: 1.8rem;
   font-weight: bold;
   color: #333;
+
+  span {
+    color: red;
+  }
 }
 
 .input-value {

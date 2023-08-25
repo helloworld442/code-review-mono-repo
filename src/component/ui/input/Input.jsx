@@ -1,9 +1,11 @@
 import "./Input.scss";
 
-const Input = ({ children, label }) => {
+const Input = ({ children, label, isEssential }) => {
   return (
     <div className="input">
-      <label className="input-label">{label}</label>
+      <label className="input-label">
+        {label} {!isEssential && <span>*</span>}
+      </label>
       {children}
     </div>
   );

@@ -1,16 +1,16 @@
 import "./ReviewForm.scss";
 import { useState } from "react";
-import { Button, ReviewInput, ReviewSelect, ReviewTextArea } from "../../ui";
+import { Button, ReviewInput, ReviewTextArea, Tag } from "../../ui";
 import { EditorCode, EditorForm, EditorTemplate } from "../../editor";
+import { ReactComponent as X } from "../../../assets/x-solid.svg";
 import { useMutation, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { postReviews } from "../../../api/review";
 
 const ReviewForm = () => {
-  const skillOptions = ["JavaScript", "Node Js", "React Js"];
   const navigateTo = useNavigate();
-  const [form, setForm] = useState({ skill: "", title: "", content: "", code: "" });
-  const [errors, setErrors] = useState({ skill: "", title: "", content: "" });
+  const [form, setForm] = useState({ tags: [], tag: "", title: "", content: "", code: "" });
+  const [errors, setErrors] = useState({ tags: "", title: "", content: "" });
   const queryClient = useQueryClient();
   const reviewMutation = useMutation(postReviews, {
     onSuccess: () => {
@@ -20,8 +20,8 @@ const ReviewForm = () => {
     onError: (error) => console.log(error),
   });
 
-  const validateSkill = (skill) => {
-    if (skill.trim() === "") return "기술 스택을 입력해주세요";
+  const validateTags = (tags) => {
+    if (tags.length > 4) return "태그는 최대 4개만 가능합니다.";
     return "";
   };
 
@@ -39,10 +39,21 @@ const ReviewForm = () => {
     return "";
   };
 
-  const onChangeSelect = (target) => {
-    const { name, value } = target;
+  const onKeyDownTag = (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      setForm((prev) => ({ ...prev, tags: form.tags.concat(e.target.value), tag: "" }));
+    }
+  };
+
+  const onDeleteTag = (id) => {
+    console.log(id);
+    setForm((prev) => ({ ...prev, tags: form.tags.filter((_, i) => i !== id) }));
+  };
+
+  const onChangeTag = (e) => {
+    const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const onChangeInput = (e) => {
@@ -54,19 +65,18 @@ const ReviewForm = () => {
   const onChangeCode = (target) => {
     const { name, value } = target;
     setForm((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const onSubmitReview = (e) => {
     e.preventDefault();
 
-    const skillError = validateSkill(form.skill);
+    const tagsError = validateTags(form.tags);
     const titleError = validateTitle(form.title);
     const contentError = validateContent(form.content);
 
-    if (skillError || titleError || contentError) {
+    if (tagsError || titleError || contentError) {
       setErrors({
-        skill: skillError,
+        tags: tagsError,
         title: titleError,
         content: contentError,
       });
@@ -75,7 +85,7 @@ const ReviewForm = () => {
 
     reviewMutation.mutate(form);
 
-    setForm({ skill: "", title: "", content: "", code: "" });
+    setForm({ tag: [], title: "", content: "", code: "" });
   };
 
   if (reviewMutation.isLoading) return <div>loading...</div>;
@@ -113,17 +123,26 @@ const ReviewForm = () => {
         </h4>
 
         {/* 정보 입력 영역 내용 */}
-        <ReviewSelect
-          name="skill"
-          label="기술 스택"
-          value={form.skill}
-          error={errors.skill}
-          options={skillOptions}
-          onSelect={onChangeSelect}
+        <ReviewInput
+          name="tag"
+          label="태그"
+          value={form.tag}
+          error={errors.tags}
+          onInput={onChangeTag}
+          onKeyDown={onKeyDownTag}
+          placeholder="태그를 입력하세요"
         />
+        <ul className="form-tag-list">
+          {form.tags.map((tag, i) => (
+            <li className="form-tag-item" key={i}>
+              <Tag title={tag} /> <X className="tag-delete" onClick={() => onDeleteTag(i)} />
+            </li>
+          ))}
+        </ul>
         <ReviewInput
           name="title"
           label="제목"
+          isEssential
           value={form.title}
           error={errors.title}
           onInput={onChangeInput}

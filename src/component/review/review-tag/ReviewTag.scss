@@ -1,0 +1,26 @@
+.review-tag {
+  position: absolute;
+  top: 160px;
+  left: 36px;
+  width: 200px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #eee;
+  border-radius: 4px;
+  background: #fff;
+  transform: translateY(-30%);
+}
+
+.review-tag-title {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.review-tag-content {
+  min-height: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}

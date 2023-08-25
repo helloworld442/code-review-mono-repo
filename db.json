@@ -1,18 +1,12 @@
 {
   "reviews": [
     {
-      "skill": "JavaScript",
-      "title": "자바스크립트가 너무 어려워요",
-      "content": "자바스크립트가 너무 어려워요자바스크립트가 너무 어려워요자바스크립트가 너무 어려워요자바스크립트가 너무 어려워요",
-      "code": "<span class = \"hg-var-code\">const</span> a = <span class = \"hg-num-code\">3</span>;\n<span class = \"hg-var-code\">let</span> b = <span class = \"hg-num-code\">3</span>;\n<span class = \"hg-var-code\">var</span> c = <span class = \"hg-num-code\">3</span>;",
-      "id": 1
-    },
-    {
-      "skill": "Node Js",
-      "title": "노드가 너무 어려워요...노드가 너무 어려워요...",
-      "content": "노드가 너무 어려워요...\n노드가 너무 어려워요...\n노드가 너무 어려워요...\n노드가 너무 어려워요...\n노드가 너무 어려워요...\n노드가 너무 어려워요...",
+      "tags": ["react", "너무 어려움"],
+      "tag": "",
+      "title": "asdfasdfdsfasdfsdfasdf",
+      "content": "asdfadsfadsfdasfsfadsfdsafadsfadsfadsfasdfsda",
       "code": "",
-      "id": 2
+      "id": 3
     }
   ]
 }
