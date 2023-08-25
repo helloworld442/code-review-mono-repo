@@ -1,5 +1,5 @@
-import { ReviewHead, ReviewList, ReviewTemplate } from "../features/review";
-import { Header, Layout } from "../features/ui";
+import { ReviewHead, ReviewList, ReviewTemplate } from "../component/review";
+import { Header, Layout } from "../component/ui";
 
 const Home = () => {
   return (

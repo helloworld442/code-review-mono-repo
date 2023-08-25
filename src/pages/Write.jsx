@@ -1,5 +1,5 @@
-import { ReviewForm, ReviewTemplate } from "../features/review";
-import { Header, Layout } from "../features/ui";
+import { ReviewForm, ReviewTemplate } from "../component/review";
+import { Header, Layout } from "../component/ui";
 
 const Write = () => {
   return (
