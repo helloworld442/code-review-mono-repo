@@ -16,21 +16,21 @@
 
 .review-item-title {
   width: 100%;
-  padding: 12px 0;
+  padding-bottom: 12px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
   .review-item-id {
-    width: 30px;
+    width: 90px;
     height: 30px;
     margin-right: 12px;
     border: 3px solid #eee;
-    border-radius: 100%;
+    border-radius: 8px;
     font-size: 1rem;
     font-weight: bold;
     color: #eee;
-    background: #403a6b;
+    background: rgb(64, 58, 107, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,6 +64,7 @@
 
 .review-item-tags {
   width: 100%;
+  padding-top: 8px;
   display: flex;
   justify-content: flex-start;
   gap: 12px;

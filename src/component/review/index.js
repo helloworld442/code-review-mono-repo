@@ -1,5 +1,6 @@
 export * from "./review-template/ReviewTemplate";
-export * from "./review-tag/ReviewTag";
+export * from "./review-banner/ReviewBanner";
+export * from "./review-rank/ReviewRank";
 export * from "./review-head/ReviewHead";
 export * from "./review-list/ReviewList";
 export * from "./review-form/ReviewForm";

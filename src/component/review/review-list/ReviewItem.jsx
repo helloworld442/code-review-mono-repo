@@ -8,7 +8,7 @@ const ReviewItem = ({ review }) => {
       {/* 리뷰 아이템 대제목  영역 */}
       <a href={"/detail/" + review.id}>
         <div className="review-item-title">
-          <span className="review-item-id">{review.id}</span>
+          <span className="review-item-id">답변진행 중</span>
           <h2>{review.title}</h2>
         </div>
       </a>

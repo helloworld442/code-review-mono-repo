@@ -1,36 +1,27 @@
 import { useState } from "react";
 import "./ReviewHead.scss";
-import { ReactComponent as ArrowDown } from "../../../assets/arrow-down-solid.svg";
+import { ReactComponent as Check } from "../../../assets/circle-check-regular.svg";
+import classNames from "classnames";
 
 const ReviewHead = () => {
-  const themeOptions = ["최신순", "답변순"];
-  const [select, setSelect] = useState(themeOptions[0]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState(0);
 
-  const onOpenSelect = () => setIsOpen(true);
-
-  const onCloseSelect = (item) => {
-    setIsOpen(false);
-    setSelect(item);
-  };
+  const onClickHeadTitle = (idx) => setActive(idx);
 
   return (
     <div className="review-head">
-      <h2 className="review-head-title">{select}</h2>
-      <div className="review-head-select">
-        <h2 className="head-select-trigger" onClick={onOpenSelect}>
-          {select} <ArrowDown id="arrow-down-icon" />
-        </h2>
-        {isOpen && (
-          <ul className="head-select-content">
-            {themeOptions.map((theme, i) => (
-              <li key={i} onClick={() => onCloseSelect(theme)}>
-                {theme}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+      <h2
+        className={classNames("review-head-title", { active: active === 0 })}
+        onClick={() => onClickHeadTitle(0)}
+      >
+        {active === 0 && <Check id="check-icon" />} 최신순
+      </h2>
+      <h2
+        className={classNames("review-head-title", { active: active === 1 })}
+        onClick={() => onClickHeadTitle(1)}
+      >
+        {active === 1 && <Check id="check-icon" />} 답변순
+      </h2>
     </div>
   );
 };
