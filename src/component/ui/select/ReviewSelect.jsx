@@ -4,7 +4,8 @@ import classNames from "classnames";
 
 const ReviewSelect = ({ name, label, value, error, options, onSelect }) => {
   return (
-    <Select name={name} label={label} onSelect={onSelect}>
+    <Select name={name} onSelect={onSelect}>
+      <Select.Label label={label} />
       <Select.Trigger error={error} trigger={<ReviewSelectTrigger value={value} />} />
       <Select.Menu>
         {options.map((option, i) => (

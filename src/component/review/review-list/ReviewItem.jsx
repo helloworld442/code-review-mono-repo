@@ -1,5 +1,4 @@
 import "./ReviewItem.scss";
-import { Tag } from "../../ui";
 import { ReactComponent as ArrowRight } from "../../../assets/arrow-right-solid.svg";
 import { Link } from "react-router-dom";
 

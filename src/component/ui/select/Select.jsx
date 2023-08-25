@@ -19,12 +19,13 @@ const Select = ({ children, name, label, onSelect }) => {
 
   return (
     <SelectContext.Provider value={{ isOpen, onOpenSelect, onCloseSelect }}>
-      <div className="select">
-        <span className="select-label">{label}</span>
-        {children}
-      </div>
+      <div className="select">{children}</div>
     </SelectContext.Provider>
   );
+};
+
+const SelectLabel = ({ label }) => {
+  return <span className="select-label">{label}</span>;
 };
 
 const SelectTrigger = ({ error, trigger }) => {
@@ -57,6 +58,7 @@ const SelectError = ({ error }) => {
   return <span className="select-error">{error}</span>;
 };
 
+Select.Label = SelectLabel;
 Select.Trigger = SelectTrigger;
 Select.Menu = SelectMenu;
 Select.Item = SelectItem;
