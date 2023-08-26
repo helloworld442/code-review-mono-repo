@@ -1,5 +1,5 @@
 import { ReviewDetail, ReviewTemplate } from "../component/review";
-import { Header, Layout } from "../component/ui";
+import { Footer, Header, Layout } from "../component/ui";
 
 const Detail = () => {
   return (
@@ -8,6 +8,7 @@ const Detail = () => {
       <ReviewTemplate>
         <ReviewDetail />
       </ReviewTemplate>
+      <Footer />
     </Layout>
   );
 };

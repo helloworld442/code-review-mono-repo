@@ -5,7 +5,7 @@ import {
   ReviewRank,
   ReviewTemplate,
 } from "../component/review";
-import { Header, Layout } from "../component/ui";
+import { Footer, Header, Layout } from "../component/ui";
 
 const Home = () => {
   return (
@@ -17,6 +17,7 @@ const Home = () => {
         <ReviewHead />
         <ReviewList />
       </ReviewTemplate>
+      <Footer />
     </Layout>
   );
 };

@@ -1,5 +1,5 @@
 import { ReviewForm, ReviewTemplate } from "../component/review";
-import { Header, Layout } from "../component/ui";
+import { Footer, Header, Layout } from "../component/ui";
 
 const Write = () => {
   return (
@@ -8,6 +8,7 @@ const Write = () => {
       <ReviewTemplate>
         <ReviewForm />
       </ReviewTemplate>
+      <Footer />
     </Layout>
   );
 };
