@@ -1,6 +1,7 @@
 @import "../../../utils/mixin";
 
 .tag {
+  min-width: auto;
   max-width: 120px;
   max-height: 36px;
   display: inline-block;
@@ -9,9 +10,6 @@
   border: 2px solid #eee;
   border-radius: 8px;
   background: rgb(64, 58, 107, 0.8);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,11 +21,13 @@
   font-size: 1rem;
   font-weight: bold;
   color: #eee;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @include tablet {
   .tag {
-    max-width: 80px;
     max-height: 30px;
   }
 

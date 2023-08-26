@@ -27,7 +27,6 @@ const ReviewList = () => {
       setCurrPage(currPage + 1);
     }
   };
-  console.log(currPage);
 
   if (isLoading) return <div>loading</div>;
 

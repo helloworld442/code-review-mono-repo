@@ -73,8 +73,8 @@
   width: 100%;
   padding-top: 8px;
   display: flex;
-  justify-content: flex-start;
   gap: 12px;
+  overflow: overlay;
 }
 
 @include mobile {
