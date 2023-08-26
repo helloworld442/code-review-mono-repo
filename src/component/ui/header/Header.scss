@@ -87,6 +87,11 @@
   align-items: center;
   transition: all 0.8s ease-in-out;
   z-index: 100;
+  opacity: 1;
+
+  &.hide {
+    opacity: 0;
+  }
 }
 
 .header-intro-main-title {

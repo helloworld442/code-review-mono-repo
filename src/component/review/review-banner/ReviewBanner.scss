@@ -114,6 +114,10 @@
 }
 
 @include tablet {
+  .review-banner {
+    height: 450px;
+  }
+
   .review-banner-title {
     width: 700px;
   }
@@ -153,6 +157,10 @@
 }
 
 @include mobile {
+  .review-banner {
+    height: 400px;
+  }
+
   .review-banner-title {
     width: 360px;
     font-size: 1.2rem;
