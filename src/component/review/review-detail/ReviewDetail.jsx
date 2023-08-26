@@ -62,13 +62,13 @@ const ReviewDetail = () => {
           아직 답변이 없습니다!!
         </h2>
 
-        <div className="answer-content">
+        <form className="answer-content">
           <ReviewInput label="제목" isEssential />
           <ReviewTextArea label="내용" />
           <Button size="large" primary>
             등록
           </Button>
-        </div>
+        </form>
       </div>
     </div>
   );
