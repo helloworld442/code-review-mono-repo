@@ -82,12 +82,16 @@
   padding: 0 100px;
   box-sizing: border-box;
   background-color: #403a6b;
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   transition: all 0.8s ease-in-out;
   z-index: 100;
   opacity: 1;
+
+  &.isBackground {
+    display: flex;
+  }
 
   &.hide {
     opacity: 0;
