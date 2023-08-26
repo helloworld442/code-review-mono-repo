@@ -2,9 +2,9 @@
 
 @include desktop {
   .review-list {
+    position: relative;
     max-width: 900px;
-    height: 580px;
-    padding: 24px;
+    padding: 100px 24px;
     margin: 0 auto;
     box-sizing: border-box;
     border: 2px solid #eee;
@@ -19,8 +19,9 @@
 
 @include tablet {
   .review-list {
+    position: relative;
     width: 768px;
-    padding: 24px;
+    padding: 100px 24px;
     margin: 0 auto;
     box-sizing: border-box;
     border: 2px solid #eee;

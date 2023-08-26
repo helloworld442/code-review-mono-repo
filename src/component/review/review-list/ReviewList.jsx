@@ -1,5 +1,6 @@
 import "./ReviewList.scss";
 import ReviewItem from "./ReviewItem";
+import ReviewSearch from "../review-search/ReviewSearch";
 import { useQuery } from "react-query";
 import { getReviews } from "../../../api/review";
 
@@ -18,6 +19,7 @@ const ReviewList = () => {
 
   return (
     <ul className="review-list">
+      <ReviewSearch />
       {data.map((item) => (
         <ReviewItem key={item.id} review={item} />
       ))}
