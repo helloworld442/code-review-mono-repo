@@ -23,7 +23,7 @@ const ReviewList = () => {
   };
 
   const onClickNextPages = () => {
-    if (currPage < Math.ceil(data?.length / 3)) {
+    if (currPage < Math.ceil(data?.length / 6)) {
       setCurrPage(currPage + 1);
     }
   };
@@ -41,7 +41,7 @@ const ReviewList = () => {
       <Pagination
         currPage={currPage}
         totalPages={data.length}
-        itemPerPages={3}
+        itemPerPages={6}
         onClickPages={onClickPages}
         onClickPrevPages={onClickPrevPages}
         onClickNextPages={onClickNextPages}

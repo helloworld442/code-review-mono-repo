@@ -1,8 +1,7 @@
 import "./ReviewForm.scss";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button, ReviewInput, ReviewTextArea, Tag } from "../../ui";
 import { EditorCode, EditorForm, EditorTemplate } from "../../editor";
-import { ReactComponent as X } from "../../../assets/x-solid.svg";
 import { useMutation, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
 import { postReviews } from "../../../api/review";
@@ -39,22 +38,11 @@ const ReviewForm = () => {
     return "";
   };
 
-  const onKeyDownTag = (e) => {
-    if (e.keyCode === 13) {
-      e.preventDefault();
-      if (e.target.value.trim() !== "") {
-        setForm((prev) => ({ ...prev, tags: form.tags.concat(e.target.value), tag: "" }));
-      }
-    }
-  };
-
-  const onDeleteTag = (id) => {
-    setForm((prev) => ({ ...prev, tags: form.tags.filter((_, i) => i !== id) }));
-  };
-
   const onChangeTag = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+    const tag = e.target.value.replace(/#([\S]+)/g, '<span class="colorful-text">#$1</span>');
+    const tags = e.target.value.match(/#([\S]+)/g);
+    setForm((prev) => ({ ...prev, tag }));
+    setForm((prev) => ({ ...prev, tags }));
   };
 
   const onChangeInput = (e) => {
@@ -88,6 +76,8 @@ const ReviewForm = () => {
 
     setForm({ tag: [], title: "", content: "", code: "" });
   };
+
+  console.log(form);
 
   if (reviewMutation.isLoading) return <div>loading...</div>;
 
@@ -124,26 +114,18 @@ const ReviewForm = () => {
         </h4>
 
         {/* 정보 입력 영역 내용 */}
-        <ReviewInput
-          name="tag"
-          label="태그"
-          value={form.tag}
-          error={errors.tags}
-          onInput={onChangeTag}
-          onKeyDown={onKeyDownTag}
-          placeholder="태그를 입력하세요"
-        />
-        <ul className="form-tag-list">
-          {form.tags.map((tag, i) => (
-            <li className="form-tag-item" key={i}>
-              <Tag title={tag} /> <X className="tag-delete" onClick={() => onDeleteTag(i)} />
-            </li>
-          ))}
-        </ul>
+
+        <div className="review-tag-input">
+          <label className="tag-input-label">태그</label>
+          <div className="tag-input-box">
+            <pre dangerouslySetInnerHTML={{ __html: form.tag }} />
+            <input type="text" name="tag" onChange={onChangeTag} spellCheck="false" />
+          </div>
+        </div>
+
         <ReviewInput
           name="title"
           label="제목"
-          isEssential
           value={form.title}
           error={errors.title}
           onInput={onChangeInput}

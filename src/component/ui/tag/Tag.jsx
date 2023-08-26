@@ -1,11 +1,7 @@
 import "./Tag.scss";
 
 const Tag = ({ title }) => {
-  return (
-    <span className="tag">
-      <span className="tag-title">#{title}</span>
-    </span>
-  );
+  return <span className="tag">{title}</span>;
 };
 
 export { Tag };
