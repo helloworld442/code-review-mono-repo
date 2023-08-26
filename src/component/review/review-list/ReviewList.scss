@@ -21,7 +21,7 @@
 @include tablet {
   .review-list {
     position: relative;
-    width: 768px;
+    width: 100%;
     min-height: 698px;
     padding: 100px 24px;
     margin: 0 auto;
@@ -30,7 +30,24 @@
     border-radius: 4px;
     background: #fff;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 100%);
+    grid-auto-rows: 150px;
+    grid-gap: 20px;
+  }
+}
+@include mobile {
+  .review-list {
+    position: relative;
+    width: 100%;
+    min-height: 698px;
+    padding: 100px 24px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid #eee;
+    border-radius: 4px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
     grid-auto-rows: 150px;
     grid-gap: 20px;
   }

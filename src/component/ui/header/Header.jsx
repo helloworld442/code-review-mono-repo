@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./Header.scss";
 import classNames from "classnames";
+import { ReactComponent as User } from "../../../assets/user-regular.svg";
+import { ReactComponent as Write } from "../../../assets/pen-to-square-regular.svg";
 
 const Header = ({ isBackground }) => {
   const [scrollY, setScrollY] = useState(0);
@@ -24,7 +26,7 @@ const Header = ({ isBackground }) => {
           별무리 스튜디오
         </a>
 
-        {/* 헤더 매뉴 */}
+        {/* 헤더 매뉴 데스크 테블릿 버전*/}
         <ul className="header-menu">
           <li className="header-item">
             <a href="/write">글쓰기</a>
@@ -34,6 +36,19 @@ const Header = ({ isBackground }) => {
           </li>
           <li className="header-item login">
             <a>로그인</a>
+          </li>
+        </ul>
+
+        <ul className="header-mobile-menu">
+          <li className="header-mobile-item">
+            <a href="/write">
+              <Write />
+            </a>
+          </li>
+          <li className="header-mobile-item">
+            <a>
+              <User />
+            </a>
           </li>
         </ul>
       </nav>

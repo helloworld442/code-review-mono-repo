@@ -1,3 +1,5 @@
+@import "../../../utils/mixin";
+
 .review-item {
   position: relative;
   width: 100%;
@@ -22,7 +24,8 @@
   align-items: center;
 
   .review-item-id {
-    width: 90px;
+    min-width: 90px;
+    max-width: 90px;
     height: 30px;
     margin-right: 12px;
     border: 3px solid #eee;
@@ -72,4 +75,10 @@
   display: flex;
   justify-content: flex-start;
   gap: 12px;
+}
+
+@include mobile {
+  .review-item-id {
+    font-size: 0.4rem;
+  }
 }

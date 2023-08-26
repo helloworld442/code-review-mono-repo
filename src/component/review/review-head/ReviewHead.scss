@@ -14,12 +14,45 @@
 
 @include tablet {
   .review-head {
-    max-width: 768px;
+    width: 100%;
     padding: 12px 0;
     margin: 0 auto;
     box-sizing: border-box;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.review-head-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+
+  & + & {
+    margin-left: 12px;
+  }
+
+  &.active {
+    color: rgb(64, 58, 107, 0.5);
+    fill: rgb(64, 58, 107, 0.5);
+  }
+
+  #check-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+@include mobile {
+  .review-head {
+    width: 100%;
+    padding: 12px 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
 }
