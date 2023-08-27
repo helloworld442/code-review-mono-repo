@@ -1,5 +1,5 @@
 import "./ReviewForm.scss";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Button, ReviewInput, ReviewTextArea, Tag } from "../../ui";
 import { EditorCode, EditorForm, EditorTemplate } from "../../editor";
 import { useMutation, useQueryClient } from "react-query";
@@ -137,6 +137,7 @@ const ReviewForm = () => {
               name="tag"
               onChange={onChangeTag}
               onKeyDown={onKeyDownTag}
+              placeholder="태그를 입력하세요"
               spellCheck="false"
             />
           </div>

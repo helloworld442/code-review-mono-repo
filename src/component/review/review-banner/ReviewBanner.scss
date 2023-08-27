@@ -90,15 +90,18 @@
 
 .banner-item-content {
   width: 100%;
+  height: 100px;
   margin-top: 36px;
   font-size: 1.4rem;
   font-weight: bold;
   font-family: "Jua", sans-serif;
   color: #333;
   line-height: 2.2rem;
-  white-space: pre-wrap;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .banner-item-info {
