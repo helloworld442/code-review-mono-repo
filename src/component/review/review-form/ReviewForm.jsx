@@ -10,6 +10,7 @@ const ReviewForm = () => {
   const navigateTo = useNavigate();
   const [form, setForm] = useState({ tags: [], tag: "", title: "", content: "", code: "" });
   const [errors, setErrors] = useState({ tags: "", title: "", content: "" });
+  const [lastSpacebarPressTime, setLastSpacebarPressTime] = useState(0);
   const queryClient = useQueryClient();
   const reviewMutation = useMutation(postReviews, {
     onSuccess: () => {
@@ -38,11 +39,23 @@ const ReviewForm = () => {
     return "";
   };
 
+  const onKeyDownTag = (e) => {
+    if (e.key === " " && e.timeStamp - lastSpacebarPressTime > 500) {
+      const tags = e.target.value.match(/#([\S]+)/g);
+      setForm((prev) => ({ ...prev, tags }));
+      setLastSpacebarPressTime(e.timeStamp);
+    }
+
+    if (e.key === "Backspace" && e.timeStamp - lastSpacebarPressTime > 500) {
+      const tags = e.target.value.match(/#([\S]+)/g);
+      setForm((prev) => ({ ...prev, tags }));
+      setLastSpacebarPressTime(e.timeStamp);
+    }
+  };
+
   const onChangeTag = (e) => {
-    const tag = e.target.value.replace(/#([\S]+)/g, '<span class="colorful-text">#$1</span>');
-    const tags = e.target.value.match(/#([\S]+)/g);
+    const tag = e.target.value.replace(/#([\S]+) /g, '<span class="colorful-text">#$1 </span>');
     setForm((prev) => ({ ...prev, tag }));
-    setForm((prev) => ({ ...prev, tags }));
   };
 
   const onChangeInput = (e) => {
@@ -119,7 +132,13 @@ const ReviewForm = () => {
           <label className="tag-input-label">태그</label>
           <div className="tag-input-box">
             <pre dangerouslySetInnerHTML={{ __html: form.tag }} />
-            <input type="text" name="tag" onChange={onChangeTag} spellCheck="false" />
+            <input
+              type="text"
+              name="tag"
+              onChange={onChangeTag}
+              onKeyDown={onKeyDownTag}
+              spellCheck="false"
+            />
           </div>
         </div>
 
