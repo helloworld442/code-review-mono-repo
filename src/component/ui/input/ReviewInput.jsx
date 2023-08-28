@@ -3,7 +3,7 @@ import Input from "./Input";
 const ReviewInput = ({ name, label, code, error, onInput, onKeyDown, placeholder, tutalrial }) => {
   return (
     <Input label={label}>
-      <Input.Content tutalrial={tutalrial}>
+      <Input.Content>
         <Input.Code code={code} />
         <Input.Value
           name={name}

@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import "./Input.scss";
 
 const Input = ({ children, label }) => {
@@ -10,8 +9,8 @@ const Input = ({ children, label }) => {
   );
 };
 
-const InputContent = ({ children, tutalrial }) => {
-  return <div className={classNames("input-content", { tutalrial })}>{children}</div>;
+const InputContent = ({ children }) => {
+  return <div className="input-content">{children}</div>;
 };
 
 const InputCode = ({ code }) => {

@@ -23,10 +23,8 @@
   box-sizing: border-box;
   border: 2px solid #bbb;
   border-radius: 8px;
-
-  &.tutalrial {
-    z-index: 100;
-  }
+  background: #fff;
+  z-index: 100;
 
   pre,
   input {

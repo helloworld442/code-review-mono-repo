@@ -1,5 +1,5 @@
 import "./ReviewForm.scss";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button, Modal, ReviewInput, ReviewTextArea } from "../../ui";
 import { EditorCode, EditorForm, EditorTemplate } from "../../editor";
 import { useMutation, useQueryClient } from "react-query";
@@ -8,6 +8,7 @@ import { postReviews } from "../../../api/review";
 
 const ReviewForm = () => {
   const navigateTo = useNavigate();
+  const tutalrialRef = useRef(null);
   const [tutalrialIndex, setTutalrialIndex] = useState(0);
   const [form, setForm] = useState({
     tags: [],
@@ -18,7 +19,6 @@ const ReviewForm = () => {
     code: "",
   });
   const [errors, setErrors] = useState({
-    tags: "",
     title: "",
     problem: "",
     question: "",
@@ -31,11 +31,6 @@ const ReviewForm = () => {
     },
     onError: (error) => console.log(error),
   });
-
-  const validateTags = (tags) => {
-    if (tags.length > 4) return "태그는 최대 4개만 가능합니다.";
-    return "";
-  };
 
   const validateTitle = (title) => {
     if (title.trim() === "") return "제목을 입력해주세요";
@@ -100,14 +95,12 @@ const ReviewForm = () => {
   const onSubmitReview = (e) => {
     e.preventDefault();
 
-    const tagsError = validateTags(form.tags);
     const titleError = validateTitle(form.title);
     const problemError = validateProblem(form.problem);
     const questionError = validateQuestion(form.question);
 
-    if (tagsError || titleError || problemError || questionError) {
+    if (titleError || problemError || questionError) {
       setErrors({
-        tags: tagsError,
         title: titleError,
         problem: problemError,
         question: questionError,
@@ -126,6 +119,12 @@ const ReviewForm = () => {
       code: "",
     });
   };
+
+  useEffect(() => {
+    if (tutalrialRef.current) {
+      tutalrialRef.current.scrollIntoView({});
+    }
+  }, [tutalrialIndex]);
 
   if (reviewMutation.isLoading) return <div>loading...</div>;
 
@@ -153,6 +152,8 @@ const ReviewForm = () => {
           {tutalrialIndex === 0 && (
             <Modal
               content="코드를 입력할 수 있는 간의 에디터입니다"
+              tutalrialRef={tutalrialRef}
+              tutalrialIndex={tutalrialIndex}
               onClickPrevTutalrial={onClickPrevTutalrial}
               onClickNextTutalrial={onClickNextTutalrial}
             />
@@ -181,7 +182,9 @@ const ReviewForm = () => {
           tutalrial={
             tutalrialIndex === 1 && (
               <Modal
-                content="태그 기능이 탑제된 제목입니다"
+                content="태그 기능이 탑제된 제목칸입니다"
+                tutalrialRef={tutalrialRef}
+                tutalrialIndex={tutalrialIndex}
                 onClickPrevTutalrial={onClickPrevTutalrial}
                 onClickNextTutalrial={onClickNextTutalrial}
               />
@@ -195,6 +198,17 @@ const ReviewForm = () => {
           error={errors.problem}
           onInput={onChangeContent}
           placeholder="문제상황을 입력하세요"
+          tutalrial={
+            tutalrialIndex === 2 && (
+              <Modal
+                content="문제상황을 입력하는 내용칸입니다."
+                tutalrialRef={tutalrialRef}
+                tutalrialIndex={tutalrialIndex}
+                onClickPrevTutalrial={onClickPrevTutalrial}
+                onClickNextTutalrial={onClickNextTutalrial}
+              />
+            )
+          }
         />
         <ReviewTextArea
           name="question"
@@ -203,6 +217,17 @@ const ReviewForm = () => {
           error={errors.question}
           onInput={onChangeContent}
           placeholder="궁금한 점을 입력하세요"
+          tutalrial={
+            tutalrialIndex === 3 && (
+              <Modal
+                content="문제상황을 입력하는 내용칸입니다."
+                tutalrialRef={tutalrialRef}
+                tutalrialIndex={tutalrialIndex}
+                onClickPrevTutalrial={onClickPrevTutalrial}
+                onClickNextTutalrial={onClickNextTutalrial}
+              />
+            )
+          }
         />
         <Button id="review-form-code-button" size="large" primary fullWidth type="submit">
           글 등록
