@@ -1,11 +1,7 @@
 {
   "reviews": [
     {
-      "tags": [
-        "#리엑트",
-        "#자바스크립트",
-        "#너무좋아"
-      ],
+      "tags": ["#리엑트", "#자바스크립트", "#너무좋아"],
       "tag": "<span class=\"colorful-text\">#리엑트</span> <span class=\"colorful-text\">#자바스크립트</span> <span class=\"colorful-text\">#너무좋아</span>",
       "title": "리엑트 너무 좋아 자바스크립트 너무 좋아",
       "content": "리엑트 너무 좋아 자바스크립트 너무 좋아\n리엑트 너무 좋아 자바스크립트 너무 좋아\n리엑트 너무 좋아 자바스크립트 너무 좋아\n리엑트 너무 좋아 자바스크립트 너무 좋아\n리엑트 너무 좋아 자바스크립트 너무 좋아",
@@ -13,10 +9,7 @@
       "id": 17
     },
     {
-      "tags": [
-        "#태그",
-        "#태그테스트"
-      ],
+      "tags": ["#태그", "#태그테스트"],
       "tag": "<span class=\"colorful-text\">#태그</span> <span class=\"colorful-text\">#태그테스트</span>",
       "title": "안녕하세요 저는 태그 민승ㄴㅇㅁㄹㅁㄴㅇㄹㅇㄴㄹㅇㅁㄴㄹㄴ",
       "content": "안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승안녕하세요 저는 태그 민승",
@@ -24,12 +17,7 @@
       "id": 18
     },
     {
-      "tags": [
-        "#안녕",
-        "#나는",
-        "#김민승",
-        "#이야"
-      ],
+      "tags": ["#안녕", "#나는", "#김민승", "#이야"],
       "tag": "<span class=\"colorful-text\">#안녕</span> <span class=\"colorful-text\">#나는</span> <span class=\"colorful-text\">#김민승</span> <span class=\"colorful-text\">#이야</span>",
       "title": "ㅁㄴㅇㄹㅇㄴㅁㄹㅇㄴㅁㄹㅇㄴㅁㄹㅁㄴㅇㄹ",
       "content": "ㅁㄴㅇㄹㅇㄴㅁㄹㅁㅇㄴㄹㅁㅇㄴㄹㅁㅇㄴㄹㅇㄴㅁㄹㅁㅇㄴㄹㅇㄴㅁㄹㅁㄴㅇㄹㅁㅇㄴㄹㅁㅇㄴㄹㅁㅇㄴㄹㅇㄴㅁㄹㅋㅇㄴㄹ",
@@ -37,10 +25,7 @@
       "id": 19
     },
     {
-      "tags": [
-        "#리엑트",
-        "#자바스크립트"
-      ],
+      "tags": ["#리엑트", "#자바스크립트"],
       "tag": "<span class=\"colorful-text\">#리엑트 </span><span class=\"colorful-text\">#자바스크립트 </span>",
       "title": "김민승 너무 좋아요 !!!!!!",
       "content": "김민승 너무 좋아요 !!!!!!\n김민승 너무 좋아요 !!!!!!\n김민승 너무 좋아요 !!!!!!\n김민승 너무 좋아요 !!!!!!",
@@ -48,10 +33,7 @@
       "id": 20
     },
     {
-      "tags": [
-        "#리엑트",
-        "#재밌다."
-      ],
+      "tags": ["#리엑트", "#재밌다."],
       "tag": "<span class=\"colorful-text\">#리엑트 </span><span class=\"colorful-text\">#재밌다 </span>",
       "title": "리엑트 재밌다.!!!!!리엑트 재밌다.!!!!!",
       "content": "리엑트 재밌다.!!!!!리엑트 재밌다.!!!!!리엑트 재밌다.!!!!!리엑트 재밌다.!!!!!리엑트 재밌다.!!!!!리엑트 재밌다.!!!!!리엑트 재밌다.!!!!!리엑트 재밌다.!!!!!리엑트 재밌다.!!!!!리엑트 재밌다.!!!!!리엑트 재밌다.!!!!!",
@@ -59,10 +41,7 @@
       "id": 21
     },
     {
-      "tags": [
-        "#리엑트",
-        "#재밌다"
-      ],
+      "tags": ["#리엑트", "#재밌다"],
       "tag": "<span class=\"colorful-text\">#리엑트 </span><span class=\"colorful-text\">#재밌다 </span>",
       "title": "리엑트 재밌따!!!!!!!!!!!",
       "content": "리엑트 재밌따!!!!!!!!!!!\n리엑트 재밌따!!!!!!!!!!!리엑트 재밌따!!!!!!!!!!!리엑트 재밌따!!!!!!!!!!!리엑트 재밌따!!!!!!!!!!!리엑트 재밌따!!!!!!!!!!!리엑트 재밌따!!!!!!!!!!!리엑트 재밌따!!!!!!!!!!!리엑트 재밌따!!!!!!!!!!!리엑트 재밌따!!!!!!!!!!!리엑트 재밌따!!!!!!!!!!!",
@@ -70,83 +49,12 @@
       "id": 22
     },
     {
-      "tags": [
-        "#리엑트"
-      ],
+      "tags": ["#리엑트"],
       "tag": "<span class=\"colorful-text\">#리엑트 </span>리엑트 재밌다.",
       "title": "#리엑트 리엑트 재밌다.",
       "content": "리엑트 너무 재밌다\n리엑트 너무 재밌다\nㅍㅍ\n리엑트 너무 재밌다리엑트 너무 재밌다리엑트 너무 재밌다리엑트 너무 재밌다리엑트 너무 재밌다리엑트 너무 재밌다리엑트 너무 재밌다",
       "code": "",
       "id": 23
-    },
-    {
-      "tags": [
-        "#리엑트 "
-      ],
-      "tag": "<span class=\"colorful-text\">#리엑트 </span>#자바스크립트",
-      "title": "#자바스크립트",
-      "content": "헬로헬로헤로롬ㄴ헬로헬로헤로롬ㄴ헬로헬로헤로롬ㄴ헬로헬로헤로롬ㄴ헬로헬로헤로롬ㄴ헬로헬로헤로롬ㄴ",
-      "code": "",
-      "id": 24
-    },
-    {
-      "tags": [
-        "#리엑트"
-      ],
-      "tag": "<span class=\"colorful-text\">#리엑트 </span>리엑트 재밌다 ㅎㅎ",
-      "title": "리엑트 재밌다 ㅎㅎ",
-      "content": "리엑트 재밌닿ㅎ\n리엑트 재밌닿ㅎ\n리엑트 재밌닿ㅎ\n리엑트 재밌닿ㅎ\n리엑트 재밌닿ㅎ\n리엑트 재밌닿ㅎ\n리엑트 재밌닿ㅎ\n리엑트 재밌닿ㅎ리엑트 재밌닿ㅎ리엑트 재밌닿ㅎ리엑트 재밌닿ㅎ리엑트 재밌닿ㅎ",
-      "code": "",
-      "id": 25
-    },
-    {
-      "tags": [
-        "#ㅁㄴㄹㅇ",
-        "#ㅁㄴㄹ",
-        "#ㅁㄴㄹ"
-      ],
-      "tag": "<span class=\"colorful-text\">#ㅁㄴㄹㅇ </span><span class=\"colorful-text\">#ㅁㄴㄹ </span><span class=\"colorful-text\">#ㅁㄴㄹ </span>ㅁㄴㄹㄴㅇㅁㄹㅇㅁㄴㄹㅁㄴㅇ",
-      "title": "ㅁㄴㄹㄴㅇㅁㄹㅇㅁㄴㄹㅁㄴㅇ",
-      "content": "ㅁㄴㅇㄹㄴㅁㅇㄹㅁㄴㅇㄹㄴㅁㅇㄹㅁㅇㄴㄹㅁㄹㅁㄴㅇㄹㅇㅁㄴㄹㅁㄴ",
-      "code": "",
-      "id": 26
-    },
-    {
-      "tags": [],
-      "tag": "asdfasdfdsafdasfasdfasdfasdfas",
-      "title": "asdfasdfdsafdasfasdfasdfasdfas",
-      "content": "asfadsfasdfadsfadsf\nasfadsfasdfadsfadsf\nasfadsfasdfadsfadsf\nv\nasfadsfasdfadsfadsf\nv\nasfadsfasdfadsfadsf\nv\nasfadsfasdfadsfadsf\nasfadsfasdfadsfadsf\nv\nasfadsfasdfadsfadsf\nv\nasfadsfasdfadsfadsf\nasfadsfasdfadsfadsf\nasfadsfasdfadsfadsf",
-      "code": "",
-      "id": 27
-    },
-    {
-      "tags": [],
-      "tag": "adsfasdfdsafdasfasdf",
-      "title": "adsfasdfdsafdasfasdf",
-      "content": "asdfsdafsadfsadfsdafasdfasdfdafasdasdfsdafsadfsadfsdafasdfasdfdafasdasdfsdafsadfsadfsdafasdfasdfdafasdasdfsdafsadfsadfsdafasdfasdfdafasdasdfsdafsadfsadfsdafasdfasdfdafasdasdfsdafsadfsadfsdafasdfasdfdafasdasdfsdafsadfs",
-      "code": "",
-      "id": 28
-    },
-    {
-      "tags": [
-        "#리엑트",
-        "#자바스크립트"
-      ],
-      "tag": "<span class=\"colorful-text\">#리엑트 </span>리엑트 너무 재밌다. <span class=\"colorful-text\">#자바스크립트 </span>",
-      "title": "리엑트 너무 재밌다. ",
-      "content": "리엑트 너무 재밌다!!!!!\n리엑트 너무 재밌다!!!!!\n리엑트 너무 재밌다!!!!!\n리엑트 너무 재밌다!!!!!\n리엑트 너무 재밌다!!!!!\n리엑트 너무 재밌다!!!!!",
-      "code": "",
-      "id": 29
-    },
-    {
-      "tags": [
-        "#sadf"
-      ],
-      "tag": "<span class=\"colorful-text\">#sadf </span>asfadsfdsafasdfasdf",
-      "title": "asfadsfdsafasdfasdf",
-      "content": "asdfadsfsafasdfsadfasdfasdfasdfasdf",
-      "code": "<span class = \"hg-var-code\">const</span> a = <span class = \"hg-num-code\">3</span>;   ",
-      "id": 30
     }
   ]
 }
