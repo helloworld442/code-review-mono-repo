@@ -2,9 +2,9 @@ import "./Modal.scss";
 import { Button } from "../button/Button";
 
 const Modal = ({
-  tutalrialIndex,
-  tutalrialRef,
   content,
+  tutalrialRef,
+  tutalrialIndex,
   onClickPrevTutalrial,
   onClickNextTutalrial,
 }) => {
