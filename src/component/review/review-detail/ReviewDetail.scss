@@ -30,18 +30,18 @@
 
 .question-content {
   max-width: 1000px;
-  height: 300px;
+  max-height: 800px;
   margin: 0 auto;
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 36px;
 }
 
 .content-code {
   width: 100%;
-  height: 100%;
+  height: 300px;
   padding: 0.5em;
   margin: 0 auto;
   border: 2px solid #eee;
