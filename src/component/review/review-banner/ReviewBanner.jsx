@@ -34,7 +34,7 @@ const ReviewBanner = () => {
               ))}
             </div>
 
-            <pre className="banner-item-content">{item.content}</pre>
+            <pre className="banner-item-content">{item.problem}</pre>
 
             <div className="banner-item-info">
               <h6>

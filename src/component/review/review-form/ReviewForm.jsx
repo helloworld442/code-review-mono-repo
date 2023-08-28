@@ -9,8 +9,20 @@ import { postReviews } from "../../../api/review";
 const ReviewForm = () => {
   const navigateTo = useNavigate();
   const [tutalrialIndex, setTutalrialIndex] = useState(0);
-  const [form, setForm] = useState({ tags: [], tag: "", title: "", content: "", code: "" });
-  const [errors, setErrors] = useState({ tags: "", title: "", content: "" });
+  const [form, setForm] = useState({
+    tags: [],
+    tag: "",
+    title: "",
+    problem: "",
+    question: "",
+    code: "",
+  });
+  const [errors, setErrors] = useState({
+    tags: "",
+    title: "",
+    problem: "",
+    question: "",
+  });
   const queryClient = useQueryClient();
   const reviewMutation = useMutation(postReviews, {
     onSuccess: () => {
@@ -32,14 +44,15 @@ const ReviewForm = () => {
     return "";
   };
 
-  const validateContent = (content) => {
-    if (content.trim() === "") return "내용을 입력해주세요";
-    if (content.length < 30) return "내용의 길이를 (30~300)자로 맞춰주세요";
-    if (content.length > 300) return "내용의 길이를 (30~300)자로 맞춰주세요";
+  const validateProblem = (problem) => {
+    if (problem.trim() === "") return "문제상황을 입력해주세요";
     return "";
   };
 
-  console.log(tutalrialIndex);
+  const validateQuestion = (question) => {
+    if (question.trim() === "") return "궁금한점을 입력해주세요";
+    return "";
+  };
 
   const onKeyDownTag = (e) => {
     if (e.key === " ") {
@@ -73,8 +86,10 @@ const ReviewForm = () => {
   };
 
   const onChangeContent = (e) => {
-    setForm((prev) => ({ ...prev, content: e.target.value }));
-    setErrors((prev) => ({ ...prev, content: "" }));
+    const { name, value } = e.target;
+    console.log(name, value);
+    setForm((prev) => ({ ...prev, [name]: value }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const onChangeCode = (target) => {
@@ -87,20 +102,29 @@ const ReviewForm = () => {
 
     const tagsError = validateTags(form.tags);
     const titleError = validateTitle(form.title);
-    const contentError = validateContent(form.content);
+    const problemError = validateProblem(form.problem);
+    const questionError = validateQuestion(form.question);
 
-    if (tagsError || titleError || contentError) {
+    if (tagsError || titleError || problemError || questionError) {
       setErrors({
         tags: tagsError,
         title: titleError,
-        content: contentError,
+        problem: problemError,
+        question: questionError,
       });
       return;
     }
 
     reviewMutation.mutate(form);
 
-    setForm({ tag: [], title: "", content: "", code: "" });
+    setForm({
+      tags: [],
+      tag: "",
+      title: "",
+      problem: "",
+      question: "",
+      code: "",
+    });
   };
 
   if (reviewMutation.isLoading) return <div>loading...</div>;
@@ -165,12 +189,20 @@ const ReviewForm = () => {
           }
         />
         <ReviewTextArea
-          name="content"
-          label="내용"
-          value={form.content}
-          error={errors.content}
+          name="problem"
+          label="문제상황"
+          value={form.problem}
+          error={errors.problem}
           onInput={onChangeContent}
-          placeholder="내용을 입력하세요"
+          placeholder="문제상황을 입력하세요"
+        />
+        <ReviewTextArea
+          name="question"
+          label="궁금한 점"
+          value={form.question}
+          error={errors.question}
+          onInput={onChangeContent}
+          placeholder="궁금한 점을 입력하세요"
         />
         <Button id="review-form-code-button" size="large" primary fullWidth type="submit">
           글 등록

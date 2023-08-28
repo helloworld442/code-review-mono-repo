@@ -31,6 +31,11 @@ const ReviewDetail = () => {
         {/* 질문 내용 */}
         <div className="question-content">
           {/* 코드 내용 */}
+
+          <h2 className="content-code-title">
+            <span>1</span>코드
+          </h2>
+
           <pre className="content-code" onClick={onOpenModal}>
             <code dangerouslySetInnerHTML={{ __html: data.code }}></code>
           </pre>
@@ -46,7 +51,17 @@ const ReviewDetail = () => {
           )}
 
           {/* 설명 내용 */}
-          <pre className="content-desc">{data.content}</pre>
+
+          <h2 className="content-desc-title">
+            <span>2</span>설명
+          </h2>
+
+          <pre className="content-desc">
+            <h2>2-1 문제상황</h2>
+            {data.problem}
+            <h2>2-2 궁금한 점</h2>
+            {data.question}
+          </pre>
         </div>
 
         <div className="question-tags">
