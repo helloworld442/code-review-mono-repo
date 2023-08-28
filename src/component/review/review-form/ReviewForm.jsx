@@ -1,6 +1,6 @@
 import "./ReviewForm.scss";
 import { useState } from "react";
-import { Button, ReviewInput, ReviewTextArea, Tag } from "../../ui";
+import { Button, ReviewInput, ReviewTextArea } from "../../ui";
 import { EditorCode, EditorForm, EditorTemplate } from "../../editor";
 import { useMutation, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +10,6 @@ const ReviewForm = () => {
   const navigateTo = useNavigate();
   const [form, setForm] = useState({ tags: [], tag: "", title: "", content: "", code: "" });
   const [errors, setErrors] = useState({ tags: "", title: "", content: "" });
-  const [lastSpacebarPressTime, setLastSpacebarPressTime] = useState(0);
   const queryClient = useQueryClient();
   const reviewMutation = useMutation(postReviews, {
     onSuccess: () => {
@@ -27,8 +26,8 @@ const ReviewForm = () => {
 
   const validateTitle = (title) => {
     if (title.trim() === "") return "제목을 입력해주세요";
-    if (title.length < 15) return "제목의 길이를 (15~30)자로 맞춰주세요";
-    if (title.length > 30) return "제목의 길이를 (15~30)자로 맞춰주세요";
+    if (title.length < 5) return "제목의 길이를 (5~30)자로 맞춰주세요";
+    if (title.length > 30) return "제목의 길이를 (5~30)자로 맞춰주세요";
     return "";
   };
 
@@ -40,28 +39,29 @@ const ReviewForm = () => {
   };
 
   const onKeyDownTag = (e) => {
-    if (e.key === " " && e.timeStamp - lastSpacebarPressTime > 500) {
-      const tags = e.target.value.match(/#([\S]+)/g);
+    if (e.key === " ") {
+      const newValue = e.target.value + " ";
+      const tags = newValue.match(/#([\S]+)/g);
       setForm((prev) => ({ ...prev, tags }));
-      setLastSpacebarPressTime(e.timeStamp);
     }
 
-    if (e.key === "Backspace" && e.timeStamp - lastSpacebarPressTime > 500) {
-      const tags = e.target.value.match(/#([\S]+)/g);
+    if (e.key === "Backspace") {
+      const newValue = e.target.value.slice(0, -1);
+      const tags = newValue.match(/#([\S]+) /g);
       setForm((prev) => ({ ...prev, tags }));
-      setLastSpacebarPressTime(e.timeStamp);
     }
   };
 
-  const onChangeTag = (e) => {
+  const onChangeTitle = (e) => {
     const tag = e.target.value.replace(/#([\S]+) /g, '<span class="colorful-text">#$1 </span>');
-    setForm((prev) => ({ ...prev, tag }));
+    const value = e.target.value.replace(/#([\S]+) /g, "");
+    setForm((prev) => ({ ...prev, title: value, tag }));
+    setErrors((prev) => ({ ...prev, title: "" }));
   };
 
-  const onChangeInput = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: "" }));
+  const onChangeContent = (e) => {
+    setForm((prev) => ({ ...prev, content: e.target.value }));
+    setErrors((prev) => ({ ...prev, content: "" }));
   };
 
   const onChangeCode = (target) => {
@@ -89,8 +89,6 @@ const ReviewForm = () => {
 
     setForm({ tag: [], title: "", content: "", code: "" });
   };
-
-  console.log(form);
 
   if (reviewMutation.isLoading) return <div>loading...</div>;
 
@@ -128,27 +126,13 @@ const ReviewForm = () => {
 
         {/* 정보 입력 영역 내용 */}
 
-        <div className="review-tag-input">
-          <label className="tag-input-label">태그</label>
-          <div className="tag-input-box">
-            <pre dangerouslySetInnerHTML={{ __html: form.tag }} />
-            <input
-              type="text"
-              name="tag"
-              onChange={onChangeTag}
-              onKeyDown={onKeyDownTag}
-              placeholder="태그를 입력하세요"
-              spellCheck="false"
-            />
-          </div>
-        </div>
-
         <ReviewInput
           name="title"
           label="제목"
-          value={form.title}
+          code={form.tag}
           error={errors.title}
-          onInput={onChangeInput}
+          onInput={onChangeTitle}
+          onKeyDown={onKeyDownTag}
           placeholder="제목을 입력하세요"
         />
         <ReviewTextArea
@@ -156,7 +140,7 @@ const ReviewForm = () => {
           label="내용"
           value={form.content}
           error={errors.content}
-          onInput={onChangeInput}
+          onInput={onChangeContent}
           placeholder="내용을 입력하세요"
         />
         <Button id="review-form-code-button" size="large" primary fullWidth type="submit">

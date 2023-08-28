@@ -19,7 +19,7 @@
 
   #review-form-code-button {
     position: absolute;
-    bottom: -70%;
+    bottom: -50%;
     left: 0;
     padding: 0 36px;
     box-sizing: border-box;
@@ -41,7 +41,7 @@
 
   #review-form-code-button {
     position: absolute;
-    bottom: -130%;
+    bottom: -100%;
     left: 0;
     padding: 0 36px;
     box-sizing: border-box;
@@ -92,62 +92,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-}
-
-.review-tag-input {
-  .tag-input-label {
-    display: inline-block;
-    margin-bottom: 12px;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #333;
-  }
-
-  .tag-input-box {
-    position: relative;
-    width: 100%;
-    height: 56px;
-    padding: 12px;
-    box-sizing: border-box;
-    border: 2px solid #bbb;
-    border-radius: 8px;
-
-    pre,
-    input {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-    }
-
-    pre {
-      width: calc(100% - 24px);
-      height: calc(100% - 24px);
-      font-size: 1.4rem;
-      font-weight: bold;
-      font-family: "Jua", sans-serif;
-      color: #333;
-      background: transparent;
-      z-index: 0;
-
-      .colorful-text {
-        color: rgb(64, 58, 107, 0.8);
-      }
-    }
-
-    input {
-      width: calc(100% - 24px);
-      height: calc(100% - 24px);
-      border: none;
-      outline: none;
-      font-size: 1.4rem;
-      font-weight: bold;
-      font-family: "Jua", sans-serif;
-      color: transparent;
-      caret-color: #333;
-      background: transparent;
-      z-index: 1;
-    }
   }
 }
 
