@@ -1,0 +1,36 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #f8f8f7;
+  opacity: 0.8;
+  z-index: 50;
+}
+
+.modal-content {
+  position: absolute;
+  top: -80px;
+  right: 0;
+  max-width: 230px;
+  padding: 12px 24px;
+  border: 2px solid #bbb;
+  border-radius: 8px;
+  background: #f8f8f7;
+  z-index: 100;
+}
+
+.modal-content-title {
+  margin-bottom: 24px;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #333;
+  line-height: 2rem;
+}
+
+.modal-content-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}

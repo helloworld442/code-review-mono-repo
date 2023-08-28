@@ -1,6 +1,6 @@
 import "./ReviewForm.scss";
 import { useState } from "react";
-import { Button, ReviewInput, ReviewTextArea } from "../../ui";
+import { Button, Modal, ReviewInput, ReviewTextArea } from "../../ui";
 import { EditorCode, EditorForm, EditorTemplate } from "../../editor";
 import { useMutation, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,7 @@ import { postReviews } from "../../../api/review";
 
 const ReviewForm = () => {
   const navigateTo = useNavigate();
+  const [tutalrialIndex, setTutalrialIndex] = useState(0);
   const [form, setForm] = useState({ tags: [], tag: "", title: "", content: "", code: "" });
   const [errors, setErrors] = useState({ tags: "", title: "", content: "" });
   const queryClient = useQueryClient();
@@ -38,6 +39,8 @@ const ReviewForm = () => {
     return "";
   };
 
+  console.log(tutalrialIndex);
+
   const onKeyDownTag = (e) => {
     if (e.key === " ") {
       const newValue = e.target.value + " ";
@@ -50,6 +53,16 @@ const ReviewForm = () => {
       const tags = newValue.match(/#([\S]+) /g);
       setForm((prev) => ({ ...prev, tags }));
     }
+  };
+
+  const onClickPrevTutalrial = (e) => {
+    e.preventDefault();
+    setTutalrialIndex(tutalrialIndex - 1);
+  };
+
+  const onClickNextTutalrial = (e) => {
+    e.preventDefault();
+    setTutalrialIndex(tutalrialIndex + 1);
   };
 
   const onChangeTitle = (e) => {
@@ -113,6 +126,13 @@ const ReviewForm = () => {
         <EditorTemplate>
           <EditorForm name="code" onCode={onChangeCode} />
           <EditorCode code={form.code} />
+          {tutalrialIndex === 0 && (
+            <Modal
+              content="코드를 입력할 수 있는 간의 에디터입니다"
+              onClickPrevTutalrial={onClickPrevTutalrial}
+              onClickNextTutalrial={onClickNextTutalrial}
+            />
+          )}
         </EditorTemplate>
       </div>
 
@@ -134,6 +154,15 @@ const ReviewForm = () => {
           onInput={onChangeTitle}
           onKeyDown={onKeyDownTag}
           placeholder="제목을 입력하세요"
+          tutalrial={
+            tutalrialIndex === 1 && (
+              <Modal
+                content="태그 기능이 탑제된 제목입니다"
+                onClickPrevTutalrial={onClickPrevTutalrial}
+                onClickNextTutalrial={onClickNextTutalrial}
+              />
+            )
+          }
         />
         <ReviewTextArea
           name="content"

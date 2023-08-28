@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import "./Input.scss";
 
 const Input = ({ children, label }) => {
@@ -9,15 +10,15 @@ const Input = ({ children, label }) => {
   );
 };
 
-const InputContent = ({ children }) => {
-  return <div className="input-content">{children}</div>;
+const InputContent = ({ children, tutalrial }) => {
+  return <div className={classNames("input-content", { tutalrial })}>{children}</div>;
 };
 
 const InputCode = ({ code }) => {
   return <pre dangerouslySetInnerHTML={{ __html: code }} />;
 };
 
-const InputValue = ({ ...rest }) => {
+const InputValue = ({ tutalrial, ...rest }) => {
   return <input {...rest} spellCheck="false" autoComplete="false" />;
 };
 

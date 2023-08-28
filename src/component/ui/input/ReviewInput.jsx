@@ -1,9 +1,9 @@
 import Input from "./Input";
 
-const ReviewInput = ({ name, label, code, error, onInput, onKeyDown, placeholder }) => {
+const ReviewInput = ({ name, label, code, error, onInput, onKeyDown, placeholder, tutalrial }) => {
   return (
     <Input label={label}>
-      <Input.Content>
+      <Input.Content tutalrial={tutalrial}>
         <Input.Code code={code} />
         <Input.Value
           name={name}
@@ -12,6 +12,7 @@ const ReviewInput = ({ name, label, code, error, onInput, onKeyDown, placeholder
           placeholder={placeholder}
         />
       </Input.Content>
+      {tutalrial}
       <Input.Error error={error} />
     </Input>
   );

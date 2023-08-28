@@ -6,3 +6,4 @@ export * from "./input/ReviewInput";
 export * from "./textarea/ReviewTextArea";
 export * from "./button/Button";
 export * from "./pagination/Pagination";
+export * from "./modal/Modal";

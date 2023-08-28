@@ -1,4 +1,5 @@
 .input {
+  position: relative;
   width: 100%;
 }
 
@@ -22,6 +23,10 @@
   box-sizing: border-box;
   border: 2px solid #bbb;
   border-radius: 8px;
+
+  &.tutalrial {
+    z-index: 100;
+  }
 
   pre,
   input {
