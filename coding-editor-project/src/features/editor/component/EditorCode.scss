@@ -1,0 +1,69 @@
+.editor-code {
+  z-index: 0;
+  position: absolute;
+  width: calc(100% - 1em);
+  height: calc(100% - 1em);
+  padding: 0.5em;
+  margin: 0;
+  border: none;
+  resize: none;
+  font-size: 1.25rem;
+  background-color: transparent;
+  text-overflow: ellipsis;
+}
+
+.for-loop-code {
+  color: purple;
+}
+
+.while-loop-code {
+  color: purple;
+}
+
+.function-code {
+  color: red;
+}
+
+.function-var-code {
+  color: mediumturquoise;
+}
+
+.highlight-function {
+  color: blue;
+}
+
+.state-code {
+  color: blue;
+}
+
+.parentheses-code {
+  color: #888;
+}
+
+.square-brackets-code {
+  color: #333;
+}
+
+.brace-code {
+  color: purple;
+}
+
+.variable-code {
+  color: purple;
+}
+
+.var-code {
+  color: #333;
+}
+
+.const-code {
+  color: red;
+}
+
+.let-code {
+  color: #333;
+}
+
+.number-code {
+  color: orange;
+}
