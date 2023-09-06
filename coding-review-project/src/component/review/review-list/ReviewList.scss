@@ -1,0 +1,55 @@
+@import "../../../utils/mixin";
+
+@include desktop {
+  .review-list {
+    position: relative;
+    max-width: 900px;
+    min-height: 698px;
+    padding: 100px 18px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid #bbb;
+    border-radius: 4px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 18px;
+    grid-auto-rows: 150px;
+    place-items: center;
+  }
+}
+
+@include tablet {
+  .review-list {
+    position: relative;
+    width: 100%;
+    min-height: 698px;
+    padding: 100px 24px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid #bbb;
+    border-radius: 4px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-auto-rows: 150px;
+    grid-gap: 20px;
+  }
+}
+@include mobile {
+  .review-list {
+    position: relative;
+    width: 100%;
+    min-height: 698px;
+    padding: 100px 24px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 2px solid #bbb;
+    border-radius: 4px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-auto-rows: 150px;
+    grid-gap: 20px;
+  }
+}

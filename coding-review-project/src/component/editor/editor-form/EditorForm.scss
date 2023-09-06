@@ -1,0 +1,20 @@
+.editor-form {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: monospace;
+  color: transparent;
+  caret-color: red;
+  z-index: 100;
+  line-height: 1.5rem;
+  resize: none;
+  white-space: pre-wrap;
+  overflow-y: scroll;
+}

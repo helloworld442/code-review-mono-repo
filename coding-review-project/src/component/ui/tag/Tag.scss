@@ -1,0 +1,29 @@
+@import "../../../utils/mixin";
+
+.tag {
+  min-width: auto;
+  max-width: 120px;
+  max-height: 36px;
+  display: inline-block;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  border: 2px solid #e8e8e8;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #eee;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: rgb(64, 58, 107, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@include tablet {
+  .tag {
+    max-height: 30px;
+    font-size: 0.875rem;
+  }
+}

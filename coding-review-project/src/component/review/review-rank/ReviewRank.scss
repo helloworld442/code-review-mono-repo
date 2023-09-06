@@ -1,0 +1,93 @@
+@import "../../../utils/mixin";
+
+.review-rank-title {
+  margin: 12px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.review-rank-list {
+  width: 100%;
+  height: 500px;
+}
+
+.review-rank-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+
+  .rank-item-profile {
+    width: 36px;
+    height: 36px;
+    margin-right: 12px;
+    border: 2px solid #eee;
+    border-radius: 100%;
+    background: #403a6b;
+  }
+}
+
+@include desktop {
+  .review-rank {
+    position: absolute;
+    top: 624px;
+    left: 16px;
+    width: 242px;
+    padding: 12px;
+    box-sizing: border-box;
+    border: 2px solid #bbb;
+    border-radius: 4px;
+    background: #fff;
+  }
+}
+
+@include tablet {
+  .review-rank {
+    width: calc(100% - 48px);
+    padding: 12px;
+    box-sizing: border-box;
+    border: 2px solid #bbb;
+    border-radius: 4px;
+    background: #fff;
+  }
+
+  .review-rank-title {
+    font-size: 1.6rem;
+  }
+
+  .review-rank-item {
+    font-size: 1.6rem;
+
+    .rank-item-profile {
+      width: 64px;
+      height: 64px;
+    }
+  }
+}
+
+@include mobile {
+  .review-rank {
+    width: calc(100% - 48px);
+    padding: 12px;
+    box-sizing: border-box;
+    border: 2px solid #e8e8e8;
+    border-radius: 4px;
+    background: #fff;
+  }
+
+  .review-rank-title {
+    font-size: 1.2rem;
+  }
+
+  .review-rank-item {
+    font-size: 1.2rem;
+
+    .rank-item-profile {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}

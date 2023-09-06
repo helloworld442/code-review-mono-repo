@@ -1,0 +1,46 @@
+.textarea {
+  position: relative;
+  width: 100%;
+}
+
+.textarea-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.textarea-value {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #bbb;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: "Jua", sans-serif;
+  color: #333;
+  background: #fff;
+  resize: none;
+  z-index: 100;
+
+  &::placeholder {
+    color: #888;
+  }
+
+  &#error {
+    border: 3px solid red;
+  }
+}
+
+.textarea-error {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: red;
+}

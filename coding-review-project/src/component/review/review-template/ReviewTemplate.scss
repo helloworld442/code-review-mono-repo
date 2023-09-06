@@ -1,0 +1,39 @@
+@import "../../../utils/mixin";
+
+@include desktop {
+  .review-template {
+    position: relative;
+    width: 100%;
+    min-height: 650px;
+    padding-top: 80px;
+    background: #f8f8f7;
+  }
+}
+
+@include tablet {
+  .review-template {
+    position: relative;
+    width: 100%;
+    min-height: 650px;
+    padding-top: 80px;
+    background: #f8f8f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+@include mobile {
+  .review-template {
+    position: relative;
+    width: 100%;
+    min-height: 650px;
+    padding-top: 80px;
+    background: #f8f8f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+}

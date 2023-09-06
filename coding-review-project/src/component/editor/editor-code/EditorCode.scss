@@ -1,0 +1,140 @@
+.editor-code {
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  background: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: monospace;
+  color: #eee;
+  caret-color: red;
+  z-index: 99;
+  white-space: pre-wrap;
+  overflow-y: scroll;
+  line-height: 1.5rem;
+}
+
+.hg-word-code {
+  color: #4b89dc;
+}
+
+.hg-word-parenthesis-code {
+  color: #eee;
+}
+
+.hg-block-code {
+  color: #a374db;
+}
+
+.hg-function-keyword-code {
+  color: #a374db;
+}
+
+.hg-fc-parenthesis-code {
+  color: #db4455;
+}
+
+.hg-block-parenesis-code {
+  color: #eee;
+}
+
+.hg-return-code {
+  color: #a374db;
+}
+
+.hg-gate-code {
+  color: #5cffd1;
+}
+
+.hg-gate-parenesis-code {
+  color: #eee;
+}
+
+.hg-function-code {
+  color: #4b89dc;
+}
+
+.hg-fc-parenesis-code {
+  color: #eee;
+}
+
+.hg-conditional-code {
+  color: #a374db;
+}
+
+.hg-con-parenesis-code {
+  color: #eee;
+}
+
+.hg-parenthesis-function-code {
+  color: #db4455;
+}
+
+.hg-bracket-var-code {
+  color: #db4455;
+}
+
+.hg-var-code {
+  color: #a374db;
+}
+
+.hg-null-code {
+  color: orange;
+}
+
+.hg-num-code {
+  color: #ff7f00;
+}
+
+.hg-comment-code {
+  color: #888;
+}
+
+.hg-parenthesis-code {
+  color: #fff;
+}
+
+.hg-brackets-code {
+  color: #fff;
+}
+
+.hg-not-equal-code {
+  color: #eee;
+}
+
+.hg-arrow-var-code {
+  color: #fff;
+}
+
+.hg-marker-code {
+  color: #3cb371;
+}
+
+.hg-component-code {
+  color: #ffff00;
+}
+
+.hg-block-return-code {
+  color: #a374db;
+}
+
+.hg-element-code {
+  color: red;
+}
+
+.hg-hyper-code {
+  color: #eee;
+}
+
+.hg-brace-code {
+  color: #eee;
+}
+
+.hg-classnames-code {
+  color: orange;
+}
